@@ -88,13 +88,9 @@
   addEventListener('resize', onScroll);
   frame();
 
-  // ---------- the film ----------
-  $$('.film').forEach(function (f) {
-    var v = $('video', f);
-    f.addEventListener('click', function () {
-      if (v.paused) { v.muted = false; v.controls = true; v.play(); f.classList.add('playing'); }
-    });
-    v.addEventListener('ended', function () { f.classList.remove('playing'); v.controls = false; });
+  // the film uses the browser's own player (play, pause, volume, full screen); it only pauses when scrolled away
+  if ('IntersectionObserver' in window) $$('.film video').forEach(function (v) {
+    new IntersectionObserver(function (es) { if (!es[0].isIntersecting && !v.paused) v.pause(); }, { threshold: 0 }).observe(v);
   });
 
   // ---------- try a theme ----------
