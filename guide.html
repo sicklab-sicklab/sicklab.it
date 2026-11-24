@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guide — MGU Store Manager</title>
+<meta name="title-en" content="Guide — MGU Store Manager"><meta name="title-it" content="Guida — MGU Store Manager">
+<meta name="description" content="Step-by-step guide: install, licence, BimmerCode backup and restore, setup wizard, installing apps.">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://sicklab.it/guide.html">
+<meta property="og:title" content="Guide — MGU Store Manager"><meta property="og:description" content="Step-by-step guide: install, licence, BimmerCode backup and restore, setup wizard, installing apps."><meta property="og:url" content="https://sicklab.it/guide.html">
+<meta property="og:image" content="https://sicklab.it/assets/img/og.jpg"><meta property="og:type" content="website"><meta property="og:site_name" content="sicklab.it">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.png"><link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css?v=1795530236">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="index.html"><img class="ic" src="assets/img/icon.png" alt="">MGU Store Manager<span class="bar"></span><img class="sk" src="assets/img/sick.svg" alt="S!ck."></a>
+  <button class="menu-btn" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
+  <nav class="links">
+    <a href="index.html#apps"><span lang="en">Apps</span><span lang="it">App</span></a>
+    <a href="index.html#how"><span lang="en">How it works</span><span lang="it">Come funziona</span></a>
+    <a href="index.html#pricing"><span lang="en">Pricing</span><span lang="it">Prezzi</span></a>
+    <a href="guide.html"><span lang="en">Guide</span><span lang="it">Guida</span></a>
+    <a href="help.html"><span lang="en">Help</span><span lang="it">Aiuto</span></a>
+    <span class="langsw"><button data-set="en">EN</button><button data-set="it">IT</button></span>
+    <a class="btn sm" href="https://drive.google.com/file/d/1ylP1SdAPowxpLHwGkj8nnYrrPrIfiD7O/view?usp=sharing" rel="noopener"><span lang="en">Download</span><span lang="it">Scarica</span></a>
+    <a class="btn sm ghost" href="index.html#pricing"><span lang="en">Buy</span><span lang="it">Acquista</span></a>
+  </nav>
+</div></header>
+<main>
+<div class="wrap doc">
+<aside><a href="#ch1"><span class="n">1</span><span lang="en">What it is and what you need</span><span lang="it">Cos'è e cosa serve</span></a><a href="#ch2"><span class="n">2</span><span lang="en">Installing the app</span><span lang="it">Installare l'app</span></a><a href="#ch3"><span class="n">3</span><span lang="en">Language and licence</span><span lang="it">Lingua e licenza</span></a><a href="#ch4"><span class="n">4</span><span lang="en">Dependencies</span><span lang="it">Programmi necessari</span></a><a href="#ch5"><span class="n">5</span><span lang="en">First setup: the setup wizard</span><span lang="it">Prima configurazione: la procedura guidata</span></a><a href="#ch6"><span class="n">6</span><span lang="en">Backing up the coding with BimmerCode</span><span lang="it">Backup della codifica con BimmerCode</span></a><a href="#ch7"><span class="n">7</span><span lang="en">Restoring the coding with BimmerCode</span><span lang="it">Ripristino della codifica con BimmerCode</span></a><a href="#ch8"><span class="n">8</span><span lang="en">Installing apps on the car</span><span lang="it">Installare le app sull'auto</span></a><a href="#ch9"><span class="n">9</span><span lang="en">Updates and maintenance</span><span lang="it">Aggiornamenti e manutenzione</span></a><a href="#ch10"><span class="n">10</span><span lang="en">Safety and troubleshooting</span><span lang="it">Sicurezza e problemi</span></a><a href="help.html" style="margin-top:10px;color:var(--blue)"><span lang="en">→ Troubleshooting</span><span lang="it">→ Risoluzione problemi</span></a></aside>
+<article>
+  <header>
+    <span class="kicker"><span lang="en">Guide</span><span lang="it">Guida</span> · MGU Store Manager 1.1</span>
+    <h1 style="font-size:clamp(34px,5vw,52px)"><span lang="en">Installing MGU Store on your BMW, from your Mac</span><span lang="it">Installare MGU Store sulla tua BMW, dal tuo Mac</span></h1>
+    <p class="lead"><span lang="en">Everything from the download to the first app in the car: licence, the tools it needs, the coding backup with BimmerCode, the setup wizard, the restore and installing apps.</span><span lang="it">Tutto, dal download alla prima app nell'auto: licenza, programmi necessari, backup della codifica con BimmerCode, procedura guidata, ripristino e installazione delle app.</span></p>
+    <div class="note tip"><span class="t"><span lang="en">Read it before you start</span><span lang="it">Leggila prima di iniziare</span></span><span lang="en">Chapters 6 and 7 (coding backup and restore) are the important ones: enabling SSH resets the head unit's coding, and your backup is the only way to get it back.</span><span lang="it">I capitoli 6 e 7 (backup e ripristino della codifica) sono i più importanti: abilitare SSH azzera la codifica dell'unità, e il tuo backup è l'unico modo per riaverla.</span></div>
+  </header>
+<section id="ch1"><div lang="en"><h2><span class="n">1</span>What it is and what you need</h2>
+  <p><b>MGU Store Manager</b> is a macOS app that installs <b>MGU Store</b> on your BMW's head unit (iDrive 7 and iDrive 8, MGU units) and lets you manage the car's apps from your Mac, without using Terminal. It works as a remote control for two open-source tools that are already included in the app: <b>idrive7-8-ssh-root</b> (enables SSH access to the head unit) and <b>mgu-store</b> (the Store on the car and its installer). Every action that writes to the car starts only after you confirm it.</p>
+  <table>
+    <tr><th style="width:30%">What</th><th>Details</th></tr>
+    <tr><td>Mac</td><td>macOS 14 Sonoma or newer, Apple silicon or Intel. Internet connection.</td></tr>
+    <tr><td>Car</td><td>BMW with an MGU head unit: iDrive 7, or iDrive 8 (BDC3 or BCP). Battery in good condition: connect a battery charger or keep the engine running during long operations.</td></tr>
+    <tr><td>Connection</td><td>An <b>ENET cable</b> (car's OBD socket ↔ Ethernet) and, if your Mac has no Ethernet port, a USB-C/Thunderbolt ↔ Ethernet adapter.</td></tr>
+    <tr><td>Coding backup</td><td><b>BimmerCode</b> (iPhone or Android, with a compatible OBD adapter) or <b>E-Sys</b>, to save the head unit's coding <b>before</b> the flash. See chapters 6 and 7.</td></tr>
+    <tr><td>Licence</td><td>A licence for your Mac (chapter 3).</td></tr>
+    <tr><td>Programs</td><td>Python 3 and Node.js 18 or newer (chapter 4).</td></tr>
+  </table>
+  <div class="note warn"><span class="t">Read this first</span>Enabling SSH <b>flashes</b> the head unit: it <b>resets the head unit's coding (CAFD/NCD)</b> and <b>deletes the BMW Digital Key pairings</b>. Before the flash you must back up the coding (chapter 6); after the flash you restore it (chapter 7). The flash is done <b>once only</b> per car.</div></div><div lang="it"><h2><span class="n">1</span>Cos'è e cosa serve</h2>
+  <p><b>MGU Store Manager</b> è un'app per macOS che installa <b>MGU Store</b> nell'unità centrale della tua BMW (iDrive 7 e iDrive 8, unità MGU) e ti fa gestire le app dell'auto dal Mac, senza usare il Terminale. Fa da telecomando a due strumenti open source già inclusi nell'app: <b>idrive7-8-ssh-root</b> (abilita l'accesso SSH all'unità) e <b>mgu-store</b> (lo Store nell'auto e il suo installer). Ogni azione che scrive sull'auto parte solo dopo la tua conferma.</p>
+  <table>
+    <tr><th style="width:30%">Cosa</th><th>Dettagli</th></tr>
+    <tr><td>Mac</td><td>macOS 14 Sonoma o successivo, Apple silicon o Intel. Connessione a internet.</td></tr>
+    <tr><td>Auto</td><td>BMW con unità MGU: iDrive 7, oppure iDrive 8 (BDC3 o BCP). Batteria in buono stato: collega un caricabatterie o tieni il motore acceso durante le operazioni lunghe.</td></tr>
+    <tr><td>Collegamento</td><td>Un <b>cavo ENET</b> (presa OBD dell'auto ↔ Ethernet) e, se il Mac non ha la porta Ethernet, un adattatore USB-C/Thunderbolt ↔ Ethernet.</td></tr>
+    <tr><td>Backup della codifica</td><td><b>BimmerCode</b> (iPhone o Android, con un adattatore OBD compatibile) oppure <b>E-Sys</b>, per salvare la codifica dell'unità <b>prima</b> del flash. Vedi i capitoli 6 e 7.</td></tr>
+    <tr><td>Licenza</td><td>Una licenza per il tuo Mac (capitolo 3).</td></tr>
+    <tr><td>Programmi</td><td>Python 3 e Node.js 18 o successivo (capitolo 4).</td></tr>
+  </table>
+  <div class="note warn"><span class="t">Leggi prima questo</span>Abilitare SSH fa un <b>flash</b> dell'unità: <b>azzera la codifica dell'unità (CAFD/NCD)</b> e <b>cancella gli abbinamenti della BMW Digital Key</b>. Prima del flash devi fare il backup della codifica (capitolo 6); dopo il flash la ripristini (capitolo 7). Il flash si fa <b>una sola volta</b> per auto.</div></div></section>
+<section id="ch2"><div lang="en"><h2><span class="n">2</span>Installing the app</h2>
+  <div class="steps">
+    <div class="step"><div><h4>Open the .dmg file</h4><p>A window opens with the app and the Applications folder.</p></div></div>
+    <div class="step"><div><h4>Drag the app into Applications</h4><p>Then eject the “MGU Store Manager” disk in Finder.</p></div></div>
+    <div class="step"><div><h4>First launch</h4><p>The app is not signed with an Apple certificate, so the first time macOS blocks it. Open it once, then go to <b>System Settings → Privacy &amp; Security</b> and click <b>Open Anyway</b> next to “MGU Store Manager”. You can also right-click the app → <b>Open</b>.</p></div></div>
+  </div>
+  <h3>Where it keeps its data</h3>
+  <p>Everything the app creates is in <span class="path">~/Library/Application Support/MGU Store Manager</span>: your car's SSH key, the backups (<span class="path">04_backup</span>), the local Store with sources and packages (<span class="path">09_store-locale</span>), the tools and your licence. Open it from <b>Tools → Working folder → Show in Finder</b>.</p>
+  <div class="note warn"><span class="t">Keep the working folder safe</span>It holds your head unit's SSH key and the coding backups. Copy it somewhere safe (for example with Time Machine). To uninstall the app just drag it to the Bin; the working folder stays until you delete it.</div></div><div lang="it"><h2><span class="n">2</span>Installare l'app</h2>
+  <div class="steps">
+    <div class="step"><div><h4>Apri il file .dmg</h4><p>Si apre una finestra con l'app e la cartella Applicazioni.</p></div></div>
+    <div class="step"><div><h4>Trascina l'app in Applicazioni</h4><p>Poi espelli il disco “MGU Store Manager” nel Finder.</p></div></div>
+    <div class="step"><div><h4>Primo avvio</h4><p>L'app non è firmata con un certificato Apple, quindi la prima volta macOS la blocca. Aprila una volta, poi vai in <b>Impostazioni di Sistema → Privacy e sicurezza</b> e fai clic su <b>Apri comunque</b> accanto a “MGU Store Manager”. Puoi anche fare clic destro sull'app → <b>Apri</b>.</p></div></div>
+  </div>
+  <h3>Dove tiene i suoi dati</h3>
+  <p>Tutto ciò che l'app crea è in <span class="path">~/Library/Application Support/MGU Store Manager</span>: la chiave SSH dell'auto, i backup (<span class="path">04_backup</span>), lo Store locale con fonti e pacchetti (<span class="path">09_store-locale</span>), gli strumenti e la tua licenza. Aprila da <b>Strumenti → Cartella di lavoro → Mostra nel Finder</b>.</p>
+  <div class="note warn"><span class="t">Tieni al sicuro la cartella di lavoro</span>Contiene la chiave SSH dell'unità e i backup della codifica. Copiala in un posto sicuro (per esempio con Time Machine). Per disinstallare l'app basta trascinarla nel Cestino; la cartella di lavoro resta finché non la cancelli.</div></div></section>
+<section id="ch3"><div lang="en"><h2><span class="n">3</span>Language and licence</h2>
+  <h3>Language</h3>
+  <p>At the first launch the app asks for its language: <b>English</b> (default) or <b>Italiano</b>. Choose and press <b>Continue</b>. You can change it later from the menu <b>Licence → Licence and language…</b>; the app restarts in the new language.</p>
+  <h3>Activating your licence</h3>
+  <div class="steps">
+    <div class="step"><div><h4>Copy your Machine ID</h4><p>The licence screen shows <b>This Mac's Machine ID</b>, a code like <code>ABCD-EFGH-JKMN-PQRS</code>. Press <b>Copy</b>. The code identifies this Mac only and does not contain any personal data.</p></div></div>
+    <div class="step"><div><h4>Buy your licence with your car's VIN</h4><p>At checkout enter the Machine ID and your car's <b>VIN</b> (17 characters, on the registration document or at the bottom of the windscreen). The licence arrives by email: a long text that starts with <code>MGU1.</code></p></div></div>
+    <div class="step"><div><h4>Paste and activate</h4><p>Paste the whole text into <b>Paste the licence here</b> and press <b>Activate</b>. For a time licence the Mac must be <b>online</b>: the app reads the date from the internet. The app unlocks at once.</p></div></div>
+  </div>
+  <table>
+    <tr><th style="width:22%">Licence type</th><th>Validity</th></tr>
+    <tr><td>Monthly</td><td>31 days from its start date.</td></tr>
+    <tr><td>Quarterly</td><td>92 days (3 months) from its start date.</td></tr>
+    <tr><td>Yearly</td><td>366 days from its start date.</td></tr>
+    <tr><td>Unlimited</td><td>Never expires.</td></tr>
+  </table>
+  <p>The type and the dates are written inside the licence, which is digitally signed: future versions of the app recognise it automatically, and the licence keeps working when you update the app. See it any time in <b>Licence → Licence and language…</b>: type, holder, start, expiry and the days left.</p>
+  <h3>One licence per car (VIN)</h3>
+  <p>Each licence is valid for the car(s) whose VIN is written in it. The app reads the VIN <b>from the car itself</b> over the ENET cable when you press <b>Connect / detect</b>: the VIN typed in the app doesn't count. With a car that is not covered, the app still detects and reads it, but every action that writes to the car (flash, SSH, installing the Store or apps, coding, restart) is refused.</p>
+  <ul>
+    <li><b>Another car:</b> buy a licence for its VIN and add it in <b>Licence → Licence and language… → Add licence (another car)</b>. Several licences work at the same time, each for its own cars, each with its own expiry.</li>
+    <li>The licence window lists every licence with its type, expiry and VINs, and says whether the connected car is covered.</li>
+    <li>Always connect with the <b>ENET cable</b>: over the car's Wi-Fi hotspot the car doesn't report its VIN, so the app can't work on it.</li>
+    <li>When one licence expires, its cars stop being covered; the other licences keep working.</li>
+  </ul>
+  <h3>Renewal and expiry</h3>
+  <ul>
+    <li>Buy a new licence <b>before</b> the current one expires.</li>
+    <li>When a licence expires, the app <b>locks</b> and shows the licence screen again. Paste the new licence and press <b>Activate</b>. If the app is writing to the car at that moment, it locks only when the operation has finished.</li>
+    <li>An expired licence is <b>never accepted again</b> on this Mac.</li>
+    <li>Time licences check the date on the internet at least <b>every 14 days</b>: connect the Mac to the internet now and then. Keep the Mac's date and time correct (automatic): if the clock is set back, the app locks until it is right again.</li>
+    <li>The licence works only on the Mac it was issued for. For a new Mac, send us its Machine ID and ask for a new licence.</li>
+  </ul></div><div lang="it"><h2><span class="n">3</span>Lingua e licenza</h2>
+  <h3>Lingua</h3>
+  <p>Al primo avvio l'app chiede la lingua: <b>English</b> (predefinita) o <b>Italiano</b>. Scegli e premi <b>Continue</b>. Puoi cambiarla dopo dal menu <b>Licenza → Licenza e lingua…</b>; l'app si riavvia nella nuova lingua.</p>
+  <h3>Attivare la licenza</h3>
+  <div class="steps">
+    <div class="step"><div><h4>Copia il tuo Machine ID</h4><p>La schermata della licenza mostra <b>Il Machine ID di questo Mac</b>, un codice come <code>ABCD-EFGH-JKMN-PQRS</code>. Premi <b>Copia</b>. Il codice identifica solo questo Mac e non contiene dati personali.</p></div></div>
+    <div class="step"><div><h4>Compra la licenza con il VIN della tua auto</h4><p>Al pagamento inserisci il Machine ID e il <b>VIN</b> dell'auto (17 caratteri, sul libretto o in basso sul parabrezza). Ricevi la licenza per email: un testo lungo che inizia con <code>MGU1.</code></p></div></div>
+    <div class="step"><div><h4>Incolla e attiva</h4><p>Incolla tutto il testo in <b>Incolla qui la licenza</b> e premi <b>Attiva</b>. Per una licenza a tempo il Mac deve essere <b>online</b>: l'app legge la data da internet. L'app si sblocca subito.</p></div></div>
+  </div>
+  <table>
+    <tr><th style="width:22%">Tipo di licenza</th><th>Validità</th></tr>
+    <tr><td>Mensile</td><td>31 giorni dalla data di inizio.</td></tr>
+    <tr><td>Trimestrale</td><td>92 giorni (3 mesi) dalla data di inizio.</td></tr>
+    <tr><td>Annuale</td><td>366 giorni dalla data di inizio.</td></tr>
+    <tr><td>Illimitata</td><td>Non scade mai.</td></tr>
+  </table>
+  <p>Il tipo e le date sono scritti dentro la licenza, che è firmata digitalmente: le versioni future dell'app la riconoscono da sole, e la licenza continua a funzionare quando aggiorni l'app. Puoi vederla quando vuoi in <b>Licenza → Licenza e lingua…</b>: tipo, intestatario, inizio, scadenza e giorni rimasti.</p>
+  <h3>Una licenza per auto (VIN)</h3>
+  <p>Ogni licenza vale per l'auto o le auto il cui VIN è scritto dentro. L'app legge il VIN <b>dall'auto stessa</b> tramite il cavo ENET quando premi <b>Collega / rileva</b>: il VIN scritto nell'app non conta. Con un'auto non coperta l'app la rileva e la legge comunque, ma ogni azione che scrive sull'auto (flash, SSH, installazione dello Store o delle app, codifica, riavvio) viene rifiutata.</p>
+  <ul>
+    <li><b>Un'altra auto:</b> compra una licenza per il suo VIN e aggiungila in <b>Licenza → Licenza e lingua… → Aggiungi licenza (un'altra auto)</b>. Più licenze funzionano insieme, ognuna per le sue auto e con la sua scadenza.</li>
+    <li>La finestra della licenza elenca ogni licenza con tipo, scadenza e VIN, e dice se l'auto collegata è coperta.</li>
+    <li>Collegati sempre con il <b>cavo ENET</b>: dall'hotspot Wi-Fi dell'auto il VIN non viene comunicato, quindi l'app non può lavorarci.</li>
+    <li>Quando una licenza scade, le sue auto non sono più coperte; le altre licenze continuano a funzionare.</li>
+  </ul>
+  <h3>Rinnovo e scadenza</h3>
+  <ul>
+    <li>Compra una nuova licenza <b>prima</b> che scada quella attuale.</li>
+    <li>Alla scadenza l'app si <b>blocca</b> e mostra di nuovo la schermata della licenza. Incolla la nuova licenza e premi <b>Attiva</b>. Se in quel momento l'app sta scrivendo sull'auto, si blocca solo quando l'operazione è finita.</li>
+    <li>Una licenza scaduta <b>non viene mai più accettata</b> su questo Mac.</li>
+    <li>Le licenze a tempo controllano la data su internet almeno <b>ogni 14 giorni</b>: collega il Mac a internet ogni tanto. Tieni data e ora del Mac corrette (automatiche): se l'orologio viene spostato indietro, l'app si blocca finché non torna giusto.</li>
+    <li>La licenza funziona solo sul Mac per cui è stata emessa. Per un nuovo Mac, mandaci il suo Machine ID e chiedi una nuova licenza.</li>
+  </ul></div></section>
+<section id="ch4"><div lang="en"><h2><span class="n">4</span>Dependencies</h2>
+  <p>The app contains the tools, but it uses two free programs that macOS doesn't have out of the box and that cannot be included. You install them once; the app looks for them by itself and, in the setup wizard (step <b>Tools</b>), tells you if they are missing, with a button to download them.</p>
+  <table>
+    <tr><th style="width:22%">Program</th><th style="width:30%">What it is for</th><th>How to install it</th></tr>
+    <tr><td>Python 3</td><td>The SSH tool (detecting the car, flash, enabling SSH).</td><td>Download the installer from <span class="path">python.org/downloads/macos</span>, or install Apple's Command Line Tools with <code>xcode-select --install</code>.</td></tr>
+    <tr><td>Node.js ≥ 18</td><td>The Store installer, the USB stick and the apps' tools.</td><td>Download the <b>LTS</b> version for macOS from <span class="path">nodejs.org</span> and install the .pkg.</td></tr>
+    <tr><td>cryptography</td><td>Python library of the SSH tool.</td><td>Automatic: the <b>Prepare environment</b> button creates the Python environment and downloads it (needs internet).</td></tr>
+  </table>
+  <div class="note tip"><span class="t">After installing</span>Go back to the app, setup wizard → Tools, and press <b>Check again</b>: the two dots turn green and the step unlocks.</div></div><div lang="it"><h2><span class="n">4</span>Programmi necessari</h2>
+  <p>L'app contiene gli strumenti, ma usa due programmi gratuiti che macOS non ha di serie e che non si possono includere. Li installi una volta; l'app li cerca da sola e, nella procedura guidata (passo <b>Strumenti</b>), ti dice se mancano, con un pulsante per scaricarli.</p>
+  <table>
+    <tr><th style="width:22%">Programma</th><th style="width:30%">A cosa serve</th><th>Come installarlo</th></tr>
+    <tr><td>Python 3</td><td>Lo strumento SSH (rilevare l'auto, flash, abilitare SSH).</td><td>Scarica l'installer da <span class="path">python.org/downloads/macos</span>, oppure installa gli strumenti a riga di comando di Apple con <code>xcode-select --install</code>.</td></tr>
+    <tr><td>Node.js ≥ 18</td><td>L'installer dello Store, la chiavetta USB e gli strumenti delle app.</td><td>Scarica la versione <b>LTS</b> per macOS da <span class="path">nodejs.org</span> e installa il .pkg.</td></tr>
+    <tr><td>cryptography</td><td>Libreria Python dello strumento SSH.</td><td>Automatica: il pulsante <b>Prepara ambiente</b> crea l'ambiente Python e la scarica (serve internet).</td></tr>
+  </table>
+  <div class="note tip"><span class="t">Dopo l'installazione</span>Torna nell'app, procedura guidata → Strumenti, e premi <b>Ricontrolla</b>: i due pallini diventano verdi e il passo si sblocca.</div></div></section>
+<section id="ch5"><div lang="en"><h2><span class="n">5</span>First setup: the setup wizard</h2>
+  <p>The <b>Setup wizard</b> section takes you through eight steps, in order; each unlocks only when the previous one is complete. A one-minute tour of the app starts at the first launch; see it again with the <b>?</b> button at the top.</p>
+  <div class="steps">
+    <div class="step"><div><h4>Welcome</h4><p>What you are going to do, and the warnings.</p></div></div>
+    <div class="step"><div><h4>Tools</h4><p>Checks Python and Node.js and prepares the SSH tool's Python environment (<b>Prepare environment</b>, once only).</p></div></div>
+    <div class="step"><div><h4>Connect</h4><p>Enter the <b>VIN</b> (17 characters) and the head unit type (iDrive 7, iDrive 8 BDC3 or BCP). Connect the ENET cable with the car awake and press <b>Connect / detect the car</b>: it detects the address and the SSH status, read only.</p></div></div>
+    <div class="step"><div><h4>Backup — mandatory</h4><p><b>A · Automatic pre-flash capture</b> over ENET (read only), and <b>B · the coding backup with BimmerCode or E-Sys</b>: do chapter 6 now, then tick the confirmation. The step unlocks only with both.</p></div></div>
+    <div class="step"><div><h4>Enable SSH</h4><p>Flashing the debug image opens SSH access; with <b>Persistent SSH</b> it stays active for good. It <b>resets the coding and the BMW Digital Key</b>: done once only per head unit, and the app never repeats it.</p></div></div>
+    <div class="step"><div><h4>Restore</h4><p>Put the coding back from your backup with BimmerCode or E-Sys (chapter 7) and pair the Digital Key again. Then press <b>Save the coding over SSH</b>: from now on the app makes coding backups and restores by itself.</p></div></div>
+    <div class="step"><div><h4>Install</h4><p><b>Install / Update Store</b> downloads and installs the Store with its updater, renderer and tools; it stops by itself if the coding is still reset. Then <b>Restart head unit</b>: the car's screen goes off and restarts.</p></div></div>
+    <div class="step"><div><h4>Finish</h4><p>After the restart the MGU Store tile appears among the car's apps.</p></div></div>
+  </div></div><div lang="it"><h2><span class="n">5</span>Prima configurazione: la procedura guidata</h2>
+  <p>La sezione <b>Procedura guidata</b> ti porta attraverso otto passi, in ordine; ognuno si sblocca solo quando il precedente è completo. Al primo avvio parte un tour dell'app di un minuto; puoi rivederlo con il pulsante <b>?</b> in alto.</p>
+  <div class="steps">
+    <div class="step"><div><h4>Benvenuto</h4><p>Cosa stai per fare, e gli avvisi.</p></div></div>
+    <div class="step"><div><h4>Strumenti</h4><p>Controlla Python e Node.js e prepara l'ambiente Python dello strumento SSH (<b>Prepara ambiente</b>, una volta sola).</p></div></div>
+    <div class="step"><div><h4>Connetti</h4><p>Inserisci il <b>VIN</b> (17 caratteri) e il tipo di unità (iDrive 7, iDrive 8 BDC3 o BCP). Collega il cavo ENET con l'auto accesa e premi <b>Connetti / rileva vettura</b>: rileva l'indirizzo e lo stato SSH, in sola lettura.</p></div></div>
+    <div class="step"><div><h4>Backup — obbligatorio</h4><p><b>A · Cattura automatica pre-flash</b> via ENET (sola lettura), e <b>B · il backup della codifica con BimmerCode o E-Sys</b>: fai ora il capitolo 6, poi spunta la conferma. Il passo si sblocca solo con entrambi.</p></div></div>
+    <div class="step"><div><h4>Abilita SSH</h4><p>Il flash dell'immagine di debug apre l'accesso SSH; con <b>SSH persistente</b> resta attivo per sempre. <b>Azzera la codifica e la BMW Digital Key</b>: si fa una sola volta per unità, e l'app non lo ripete mai.</p></div></div>
+    <div class="step"><div><h4>Ripristino</h4><p>Rimetti la codifica dal tuo backup con BimmerCode o E-Sys (capitolo 7) e riabbina la Digital Key. Poi premi <b>Salva la codifica via SSH</b>: da qui in poi l'app fa da sola backup e ripristini della codifica.</p></div></div>
+    <div class="step"><div><h4>Installa</h4><p><b>Installa / Aggiorna Store</b> scarica e installa lo Store con updater, renderer e strumenti; si ferma da solo se la codifica è ancora azzerata. Poi <b>Riavvia head unit</b>: lo schermo dell'auto si spegne e riparte.</p></div></div>
+    <div class="step"><div><h4>Fine</h4><p>Dopo il riavvio il riquadro di MGU Store compare tra le app dell'auto.</p></div></div>
+  </div></div></section>
+<section id="ch6"><div lang="en"><h2><span class="n">6</span>Backing up the coding with BimmerCode</h2>
+  <p>Do this <b>before the flash</b> (setup wizard, step <b>Backup</b>), with the car exactly as it is now, including any retrofits, M graphics or coding changes you made. This backup is the only way to get your coding back after the flash.</p>
+  <h3>What you need</h3>
+  <ul>
+    <li>The <b>BimmerCode</b> app on your iPhone or Android phone, with a <b>BimmerCode-compatible OBD adapter</b> (see the list of supported adapters on bimmercode.app), and the BimmerCode version that allows coding for your car.</li>
+    <li>The car parked, ignition on, a battery charger connected (or the engine running).</li>
+  </ul>
+  <div class="steps">
+    <div class="step"><div><h4>Connect</h4><p>Plug the adapter into the OBD socket (under the dashboard, driver's side). Switch the ignition on, open BimmerCode and tap <b>Connect</b>. Wait until it has read the car and shows the list of control units.</p></div></div>
+    <div class="step"><div><h4>Open the head unit</h4><p>Tap the head unit (<b>Head unit / HU_MGU</b>). BimmerCode reads its coding. The first time BimmerCode reads a control unit, it <b>automatically saves a backup of its original coding</b> on the phone.</p></div></div>
+    <div class="step"><div><h4>Check the backup is there</h4><p>In BimmerCode, open the backups of the head unit (from the control unit's menu, usually <b>⋯ → Backups</b> or <b>Restore</b>) and check that a backup with <b>today's date</b> is listed. If you changed the coding before, also make sure the backup you will use reflects the car's <b>current</b> state; BimmerCode can save a new one when you read the module again.</p></div></div>
+    <div class="step"><div><h4>Do the same for related modules (recommended)</h4><p>If you have coded other modules, open them once too so BimmerCode keeps their backups. The flash only changes the head unit, but a full set of backups costs nothing.</p></div></div>
+    <div class="step"><div><h4>Write down what matters</h4><p>Take screenshots of the head unit's coding options you changed (language, units, video in motion, M graphics, camera options…). They help to check the car after the restore.</p></div></div>
+    <div class="step"><div><h4>Confirm in the app</h4><p>Back in MGU Store Manager, step Backup: tick <b>“I made the full coding backup (HU_MGU and NCD)”</b>.</p></div></div>
+  </div>
+  <div class="note warn"><span class="t">Keep the backup on the phone</span>BimmerCode keeps its backups inside the app on that phone. Until you have restored the coding (chapter 7), <b>don't uninstall BimmerCode, don't reset or change the phone</b>, and use the same phone and the same BimmerCode account for the restore.</div>
+  <div class="note tip"><span class="t">With E-Sys instead</span>Read the head unit's coding (HU_MGU) and save the <b>NCD</b> file (<code>CAFD_…_….ncd</code>), then copy it into the app's <span class="path">04_backup</span> folder. Also note the head unit's <b>CAFD ID</b>: the app's pre-flash capture records it for you.</div>
+  <p>The app's own <b>pre-flash capture</b> (step Backup, A) saves the software versions with the CAFD ID and version, the VIN, the fault codes and a diagnostic log. It is read only and does not contain the coding values: it complements the BimmerCode backup, it doesn't replace it.</p></div><div lang="it"><h2><span class="n">6</span>Backup della codifica con BimmerCode</h2>
+  <p>Fallo <b>prima del flash</b> (procedura guidata, passo <b>Backup</b>), con l'auto esattamente com'è adesso, compresi retrofit, grafiche M o modifiche di codifica che hai fatto. Questo backup è l'unico modo per riavere la tua codifica dopo il flash.</p>
+  <h3>Cosa ti serve</h3>
+  <ul>
+    <li>L'app <b>BimmerCode</b> sul tuo iPhone o Android, con un <b>adattatore OBD compatibile con BimmerCode</b> (vedi l'elenco degli adattatori su bimmercode.app), e la versione di BimmerCode che permette la codifica per la tua auto.</li>
+    <li>L'auto ferma, quadro acceso, un caricabatterie collegato (o il motore acceso).</li>
+  </ul>
+  <div class="steps">
+    <div class="step"><div><h4>Collegati</h4><p>Inserisci l'adattatore nella presa OBD (sotto il cruscotto, lato guida). Accendi il quadro, apri BimmerCode e tocca <b>Connetti</b>. Aspetta che abbia letto l'auto e mostri l'elenco delle centraline.</p></div></div>
+    <div class="step"><div><h4>Apri l'unità centrale</h4><p>Tocca l'unità centrale (<b>Head unit / HU_MGU</b>). BimmerCode ne legge la codifica. La prima volta che BimmerCode legge una centralina, <b>salva automaticamente un backup della codifica originale</b> sul telefono.</p></div></div>
+    <div class="step"><div><h4>Controlla che il backup ci sia</h4><p>In BimmerCode apri i backup dell'unità centrale (dal menu della centralina, di solito <b>⋯ → Backup</b> o <b>Ripristina</b>) e controlla che ci sia un backup con la <b>data di oggi</b>. Se avevi già modificato la codifica, assicurati anche che il backup che userai rispecchi lo stato <b>attuale</b> dell'auto; BimmerCode può salvarne uno nuovo quando rileggi la centralina.</p></div></div>
+    <div class="step"><div><h4>Fai lo stesso per le centraline collegate (consigliato)</h4><p>Se hai codificato altre centraline, aprile una volta anche quelle così BimmerCode ne conserva i backup. Il flash cambia solo l'unità centrale, ma un set completo di backup non costa niente.</p></div></div>
+    <div class="step"><div><h4>Annota ciò che conta</h4><p>Fai degli screenshot delle opzioni di codifica dell'unità che hai cambiato (lingua, unità di misura, video in movimento, grafiche M, opzioni della telecamera…). Servono a controllare l'auto dopo il ripristino.</p></div></div>
+    <div class="step"><div><h4>Conferma nell'app</h4><p>Torna in MGU Store Manager, passo Backup: spunta <b>“Ho fatto il backup completo della codifica (HU_MGU e NCD).”</b></p></div></div>
+  </div>
+  <div class="note warn"><span class="t">Tieni il backup sul telefono</span>BimmerCode conserva i backup dentro l'app, su quel telefono. Finché non hai ripristinato la codifica (capitolo 7), <b>non disinstallare BimmerCode, non resettare né cambiare telefono</b>, e usa lo stesso telefono e lo stesso account BimmerCode per il ripristino.</div>
+  <div class="note tip"><span class="t">Con E-Sys invece</span>Leggi la codifica dell'unità (HU_MGU) e salva il file <b>NCD</b> (<code>CAFD_…_….ncd</code>), poi copialo nella cartella <span class="path">04_backup</span> dell'app. Annota anche il <b>CAFD ID</b> dell'unità: la cattura pre-flash dell'app lo registra per te.</div>
+  <p>La <b>cattura pre-flash</b> dell'app (passo Backup, A) salva le versioni software con CAFD ID e versione, il VIN, i codici di errore e un log diagnostico. È in sola lettura e non contiene i valori della codifica: completa il backup di BimmerCode, non lo sostituisce.</p></div></section>
+<section id="ch7"><div lang="en"><h2><span class="n">7</span>Restoring the coding with BimmerCode</h2>
+  <p>Do this <b>after the flash</b> (setup wizard, step <b>Restore</b>), before installing the Store.</p>
+  <div class="steps">
+    <div class="step"><div><h4>Connect BimmerCode again</h4><p>Same phone, same adapter, ignition on and the battery charger connected. Open BimmerCode and tap <b>Connect</b>.</p></div></div>
+    <div class="step"><div><h4>Open the head unit's backups</h4><p>Tap the head unit (<b>Head unit / HU_MGU</b>) and open its backups (<b>⋯ → Backups</b> or <b>Restore</b>).</p></div></div>
+    <div class="step"><div><h4>Restore the backup made before the flash</h4><p>Choose the backup with the date of the day you prepared the flash and tap <b>Restore</b>. Keep the phone awake and close to the car until BimmerCode reports that the coding has been written. Don't switch the ignition off while it writes.</p></div></div>
+    <div class="step"><div><h4>Restart and check</h4><p>Switch the ignition off, lock the car for a minute, then switch it on again (or restart the head unit). Check the screen, language, units, camera, M graphics and the options you noted. Compare with your screenshots.</p></div></div>
+    <div class="step"><div><h4>Pair the Digital Key again</h4><p>The flash deleted the BMW Digital Key pairings: add your phone and watch again from the <b>My BMW</b> app (or the car's menu), as for a new key.</p></div></div>
+    <div class="step"><div><h4>Save the coding over SSH</h4><p>In MGU Store Manager, step Restore: tick <b>“I restored the coding and checked the car”</b> and press <b>Save the coding over SSH</b>. From now on the app can back up and restore the coding by itself, without BimmerCode.</p></div></div>
+  </div>
+  <div class="note warn"><span class="t">If the restore doesn't work</span>If BimmerCode can't restore, or something stays reset, <b>don't flash again</b>: a new flash doesn't help. Recode the head unit with <b>E-Sys</b> from your NCD file. If E-Sys says there is no CAFD (<code>FFFFFFFF</code>), first inject the CAFD (its ID is in the app's pre-flash capture), then write the NCD. On some cars with <b>Bowers &amp; Wilkins / surround</b> audio, the sound needs the audio coding and an ISTA calibration after the flash.</div></div><div lang="it"><h2><span class="n">7</span>Ripristino della codifica con BimmerCode</h2>
+  <p>Fallo <b>dopo il flash</b> (procedura guidata, passo <b>Ripristino</b>), prima di installare lo Store.</p>
+  <div class="steps">
+    <div class="step"><div><h4>Ricollega BimmerCode</h4><p>Stesso telefono, stesso adattatore, quadro acceso e caricabatterie collegato. Apri BimmerCode e tocca <b>Connetti</b>.</p></div></div>
+    <div class="step"><div><h4>Apri i backup dell'unità centrale</h4><p>Tocca l'unità centrale (<b>Head unit / HU_MGU</b>) e apri i suoi backup (<b>⋯ → Backup</b> o <b>Ripristina</b>).</p></div></div>
+    <div class="step"><div><h4>Ripristina il backup fatto prima del flash</h4><p>Scegli il backup con la data del giorno in cui hai preparato il flash e tocca <b>Ripristina</b>. Tieni il telefono acceso e vicino all'auto finché BimmerCode non conferma che la codifica è stata scritta. Non spegnere il quadro mentre scrive.</p></div></div>
+    <div class="step"><div><h4>Riavvia e controlla</h4><p>Spegni il quadro, chiudi l'auto per un minuto, poi riaccendi (o riavvia l'unità). Controlla schermo, lingua, unità di misura, telecamera, grafiche M e le opzioni che avevi annotato. Confronta con i tuoi screenshot.</p></div></div>
+    <div class="step"><div><h4>Riabbina la Digital Key</h4><p>Il flash ha cancellato gli abbinamenti della BMW Digital Key: aggiungi di nuovo telefono e orologio dall'app <b>My BMW</b> (o dal menu dell'auto), come per una chiave nuova.</p></div></div>
+    <div class="step"><div><h4>Salva la codifica via SSH</h4><p>In MGU Store Manager, passo Ripristino: spunta <b>“Ho ripristinato la codifica e verificato l'auto.”</b> e premi <b>Salva la codifica via SSH</b>. Da qui in poi l'app può fare da sola backup e ripristino della codifica, senza BimmerCode.</p></div></div>
+  </div>
+  <div class="note warn"><span class="t">Se il ripristino non funziona</span>Se BimmerCode non riesce a ripristinare, o qualcosa resta azzerato, <b>non rifare il flash</b>: un nuovo flash non serve. Ricodifica l'unità con <b>E-Sys</b> dal tuo file NCD. Se E-Sys dice che non c'è il CAFD (<code>FFFFFFFF</code>), prima inietta il CAFD (il suo ID è nella cattura pre-flash dell'app), poi scrivi l'NCD. Su alcune auto con audio <b>Bowers &amp; Wilkins / surround</b>, il suono richiede la codifica audio e una calibrazione con ISTA dopo il flash.</div></div></section>
+<section id="ch8"><div lang="en"><h2><span class="n">8</span>Installing apps on the car</h2>
+  <p>Apps are installed from the <b>Store</b> section: the <b>Apps</b> tab shows them featured and by category, the <b>Sources</b> tab shows where they come from.</p>
+  <div class="steps">
+    <div class="step"><div><h4>Add a source</h4><p>Store → <b>Sources</b>: type a GitHub repository (<code>owner/repository</code>) or a link to a package, or pick from <b>Community repositories</b> and press <b>Add</b>.</p></div></div>
+    <div class="step"><div><h4>Find the app</h4><p>Store → <b>Apps</b>: use the categories, the <b>iDrive 8 / iDrive 7</b> filter, the source and the search. Click an app to see what it does, which head units it is for and what it needs.</p></div></div>
+    <div class="step"><div><h4>Download</h4><p><b>Download</b> saves the package on the Mac and checks its id, version and, when the source publishes it, its sha256.</p></div></div>
+    <div class="step"><div><h4>Install</h4><ul><li><b>Over ENET</b>: <b>Install</b> uploads the package to the head unit; the car's deploy tool checks and installs it (if something goes wrong it rolls back by itself).</li><li><b>With a USB stick</b>: tick the apps, <b>Write to stick</b>, then in the car <b>Store → USB → Install</b>. Works without SSH and without internet.</li></ul></div></div>
+    <div class="step"><div><h4>Restart the head unit</h4><p>On iDrive 8 an app becomes active after the restart: from the Store on the car or from <b>Tools → Restart head unit</b>.</p></div></div>
+  </div>
+  <div class="note tip"><span class="t">Good to know</span>Apps that a source builds on the car (folder repositories without ready packages) are installed from the Store on the car's display, which needs internet in the car (Wi-Fi hotspot of your phone). Some apps need a <b>tool</b> from the same source (for example <i>Seats</i> and <i>Ambient Light</i> need <i>Comfort</i>): the Store tells you and installs nothing until it is there. The labels “Changes the car” and “Root tool” mark apps that send commands to control units or install services: read their README first.</div>
+
+  <h3>Included app: Drive (AWD / RWD, iDrive 8)</h3>
+  <p>The app comes with <b>Drive</b> (<code>xdrive_rwd</code>), ready in Store → Apps. On an <b>iDrive 8 BMW with xDrive</b> it switches from all-wheel drive to <b>rear-wheel drive</b> from the central display, through the DSC's own diagnostic function: nothing is coded or flashed, and xDrive comes back by itself when you switch the car off and on.</p>
+  <ul>
+    <li>Install it like any other app (Install over ENET, or the USB stick), then restart the head unit.</li>
+    <li>It starts with <b>Commands disabled</b>: until you enable them it only reads. The command needs two presses within 6 seconds.</li>
+    <li>The DSC accepts it only with the <b>ignition on, engine off, selector in P, parking brake on and the car stationary</b>. Then start the engine without switching the ignition off: the cluster shows an all-wheel-drive notice and the DSC may store a fault, which the app can clear afterwards.</li>
+    <li>It is for <b>xDrive cars with a longitudinal engine</b> (rear-wheel-drive based). Front-wheel-drive based models (1 Series F40, 2 Series Gran Coupé F44 / Active Tourer, X1, X2) cannot become rear-wheel drive. Experimental: use it only on private ground.</li>
+  </ul></div><div lang="it"><h2><span class="n">8</span>Installare le app sull'auto</h2>
+  <p>Le app si installano dalla sezione <b>Store</b>: la scheda <b>App</b> le mostra in evidenza e per categoria, la scheda <b>Fonti</b> mostra da dove arrivano.</p>
+  <div class="steps">
+    <div class="step"><div><h4>Aggiungi una fonte</h4><p>Store → <b>Fonti</b>: scrivi un repository GitHub (<code>proprietario/repository</code>) o il link a un pacchetto, oppure scegli da <b>Repository della comunità</b> e premi <b>Aggiungi</b>.</p></div></div>
+    <div class="step"><div><h4>Trova l'app</h4><p>Store → <b>App</b>: usa le categorie, il filtro <b>iDrive 8 / iDrive 7</b>, la fonte e la ricerca. Fai clic su un'app per vedere cosa fa, per quali unità è e cosa le serve.</p></div></div>
+    <div class="step"><div><h4>Scarica</h4><p><b>Scarica</b> salva il pacchetto sul Mac e ne controlla id, versione e, quando la fonte lo pubblica, lo sha256.</p></div></div>
+    <div class="step"><div><h4>Installa</h4><ul><li><b>Via ENET</b>: <b>Installa</b> carica il pacchetto sull'unità; lo strumento di installazione dell'auto lo controlla e lo installa (se qualcosa va storto torna indietro da solo).</li><li><b>Con una chiavetta USB</b>: spunta “Chiavetta” sulle app, <b>Scrivi su chiavetta…</b>, poi nell'auto <b>Store → USB → Installa</b>. Funziona senza SSH e senza internet.</li></ul></div></div>
+    <div class="step"><div><h4>Riavvia l'unità</h4><p>Su iDrive 8 un'app si attiva dopo il riavvio: dallo Store nell'auto oppure da <b>Strumenti → Riavvia head unit</b>.</p></div></div>
+  </div>
+  <div class="note tip"><span class="t">Buono a sapersi</span>Le app che una fonte compila nell'auto (repository a cartelle senza pacchetti pronti) si installano dallo Store sullo schermo dell'auto, che ha bisogno di internet nell'auto (hotspot Wi-Fi del telefono). Alcune app richiedono uno <b>strumento</b> della stessa fonte (per esempio <i>Seats</i> e <i>Ambient Light</i> richiedono <i>Comfort</i>): lo Store te lo dice e non installa niente finché non c'è. Le etichette “Modifica l'auto” e “Strumento root” segnano le app che mandano comandi alle centraline o installano servizi: leggi prima il loro README.</div>
+
+  <h3>App inclusa: Drive (AWD / RWD, iDrive 8)</h3>
+  <p>L'app arriva con <b>Drive</b> (<code>xdrive_rwd</code>), pronta in Store → App. Su una <b>BMW iDrive 8 con xDrive</b> passa dalla trazione integrale alla <b>trazione posteriore</b> dallo schermo centrale, tramite la funzione diagnostica del DSC stesso: niente codifica, niente flash, e l'xDrive torna da solo quando spegni e riaccendi l'auto.</p>
+  <ul>
+    <li>Installala come ogni altra app (Installa via ENET, o la chiavetta USB), poi riavvia l'unità.</li>
+    <li>Parte con i <b>Comandi disabilitati</b>: finché non li abiliti legge soltanto. Il comando richiede due tocchi entro 6 secondi.</li>
+    <li>Il DSC lo accetta solo con <b>quadro acceso, motore spento, leva in P, freno di stazionamento inserito e auto ferma</b>. Poi accendi il motore senza spegnere il quadro: il quadro strumenti mostra un avviso della trazione integrale e il DSC può memorizzare un errore, che l'app può cancellare dopo.</li>
+    <li>È per le <b>auto xDrive a motore longitudinale</b> (a trazione posteriore di base). I modelli a trazione anteriore di base (Serie 1 F40, Serie 2 Gran Coupé F44 / Active Tourer, X1, X2) non possono diventare a trazione posteriore. Sperimentale: usala solo in aree private.</li>
+  </ul></div></section>
+<section id="ch9"><div lang="en"><h2><span class="n">9</span>Updates and maintenance</h2>
+  <ul>
+    <li><b>Updates</b> compares the Store's published versions with those installed on the car (<b>Read installed versions</b>) and updates them with the official installer, which verifies every file.</li>
+    <li><b>Check at launch and every 6 hours</b> shows a macOS notification when something new comes out. Nothing is ever installed on the car without your confirmation.</li>
+    <li><b>Full backup before updating the car</b>: left on, it creates a zip before every update.</li>
+    <li>The Store installer and the SSH tool are included in the app: they are updated when you install a new version of the app. Your licence keeps working.</li>
+  </ul>
+  <p>The <b>Tools</b> section has the single commands: connection and VIN, SSH access (<b>Open SSH</b>, <b>Repair key</b>, <b>Disable SSH</b>), the Store on the car (<b>Verify apps</b>, <b>Install / update</b>, <b>Restart head unit</b>, <b>Remove Store</b>). Those that change the car always ask for confirmation. <b>Activity</b> shows the full log of every command.</p></div><div lang="it"><h2><span class="n">9</span>Aggiornamenti e manutenzione</h2>
+  <ul>
+    <li><b>Aggiornamenti</b> confronta le versioni pubblicate dello Store con quelle installate nell'auto (<b>Leggi versioni installate</b>) e le aggiorna con l'installer ufficiale, che verifica ogni file.</li>
+    <li><b>Controlla all'avvio e ogni 6 ore</b> mostra una notifica di macOS quando esce qualcosa di nuovo. Niente viene mai installato nell'auto senza la tua conferma.</li>
+    <li><b>Backup completo prima di aggiornare l'auto</b>: se lo lasci attivo, crea uno zip prima di ogni aggiornamento.</li>
+    <li>L'installer dello Store e lo strumento SSH sono inclusi nell'app: si aggiornano quando installi una nuova versione dell'app. La tua licenza continua a funzionare.</li>
+  </ul>
+  <p>La sezione <b>Strumenti</b> ha i singoli comandi: connessione e VIN, accesso SSH (<b>Apri SSH</b>, <b>Ripara chiave</b>, <b>Disattiva SSH</b>), lo Store nell'auto (<b>Verifica app</b>, <b>Installa / aggiorna</b>, <b>Riavvia head unit</b>, <b>Rimuovi Store</b>). Quelli che modificano l'auto chiedono sempre conferma. <b>Attività</b> mostra il log completo di ogni comando.</p></div></section>
+<section id="ch10"><div lang="en"><h2><span class="n">10</span>Safety and troubleshooting</h2>
+  <div class="note warn"><span class="t">During operations on the car</span>Car parked, awake and powered (battery charger or engine running), ENET cable connected until the end. While the bar at the bottom says the app is “writing to the car”, don't quit the app and don't unplug the cable.</div>
+  <table>
+    <tr><th style="width:34%">Problem</th><th>What to do</th></tr>
+    <tr><td>macOS won't open the app</td><td>System Settings → Privacy &amp; Security → <b>Open Anyway</b> (chapter 2).</td></tr>
+    <tr><td>“Not covered by the licence”</td><td>The connected car's VIN is not in your licences. Buy a licence for that VIN and add it (Licence → Licence and language… → Add licence).</td></tr>
+    <tr><td>“The car didn't report its VIN”</td><td>Connect with the ENET cable (not the Wi-Fi hotspot), switch the ignition on and press Connect / detect again.</td></tr>
+    <tr><td>“This licence is for another Mac”</td><td>The licence was issued for a different Machine ID. Send us the Machine ID shown on this Mac.</td></tr>
+    <tr><td>“Connect the Mac to the internet”</td><td>Time licences check the date online at least every 14 days. Connect the Mac and the app unlocks.</td></tr>
+    <tr><td>“The Mac's clock has been set back”</td><td>Set the date and time to automatic (System Settings → General → Date &amp; Time), or connect to the internet.</td></tr>
+    <tr><td>“Licence expired”</td><td>Buy a new licence and paste it. The expired one can't be used again.</td></tr>
+    <tr><td>“Interpreter not found”</td><td>Python 3 or Node.js is missing: install it (chapter 4), then setup wizard → Tools → <b>Check again</b>.</td></tr>
+    <tr><td>The car is not detected</td><td>Check the cable and adapter, switch the ignition on, try <b>Connect / detect</b> again. In the Mac's network settings the Ethernet adapter must be active (automatic address).</td></tr>
+    <tr><td>“GitHub limit reached”</td><td>GitHub allows 60 requests an hour without an account. The Store shows the last saved check and when to try again.</td></tr>
+    <tr><td>An app doesn't install</td><td>Read the message in the bottom bar or in Activity: usually a required tool is missing or the deploy tool is old (update the Store from Updates).</td></tr>
+    <tr><td>The app doesn't appear in the car</td><td>Restart the head unit: on iDrive 8 apps activate at the restart.</td></tr>
+  </table>
+  <div class="note ok"><span class="t">Safety net</span>The Store's changes are under snapshot and reversible (restore and removal). The coding is restored from your backup. No restore needs a new flash.</div></div><div lang="it"><h2><span class="n">10</span>Sicurezza e problemi</h2>
+  <div class="note warn"><span class="t">Durante le operazioni sull'auto</span>Auto ferma, accesa e alimentata (caricabatterie o motore acceso), cavo ENET collegato fino alla fine. Finché la barra in basso dice che l'app sta “scrivendo sull'auto”, non chiudere l'app e non staccare il cavo.</div>
+  <table>
+    <tr><th style="width:34%">Problema</th><th>Cosa fare</th></tr>
+    <tr><td>macOS non apre l'app</td><td>Impostazioni di Sistema → Privacy e sicurezza → <b>Apri comunque</b> (capitolo 2).</td></tr>
+    <tr><td>“Non coperta dalla licenza”</td><td>Il VIN dell'auto collegata non è nelle tue licenze. Compra una licenza per quel VIN e aggiungila (Licenza → Licenza e lingua… → Aggiungi licenza).</td></tr>
+    <tr><td>“L'auto non ha comunicato il VIN”</td><td>Collegati con il cavo ENET (non con l'hotspot Wi-Fi), accendi il quadro e premi di nuovo Collega / rileva.</td></tr>
+    <tr><td>“Questa licenza è per un altro Mac”</td><td>La licenza è stata emessa per un altro Machine ID. Mandaci il Machine ID che compare su questo Mac.</td></tr>
+    <tr><td>“Collega il Mac a internet”</td><td>Le licenze a tempo controllano la data online almeno ogni 14 giorni. Collega il Mac e l'app si sblocca.</td></tr>
+    <tr><td>“L'orologio del Mac è stato spostato indietro”</td><td>Imposta data e ora automatiche (Impostazioni di Sistema → Generali → Data e ora), oppure collegati a internet.</td></tr>
+    <tr><td>“Licenza scaduta”</td><td>Compra una nuova licenza e incollala. Quella scaduta non si può riusare.</td></tr>
+    <tr><td>“Interprete non trovato”</td><td>Manca Python 3 o Node.js: installalo (capitolo 4), poi procedura guidata → Strumenti → <b>Ricontrolla</b>.</td></tr>
+    <tr><td>L'auto non viene rilevata</td><td>Controlla cavo e adattatore, accendi il quadro, riprova <b>Collega / rileva</b>. Nelle impostazioni di rete del Mac l'adattatore Ethernet deve essere attivo (indirizzo automatico).</td></tr>
+    <tr><td>“Limite di GitHub raggiunto”</td><td>GitHub permette 60 richieste all'ora senza account. Lo Store mostra l'ultimo controllo salvato e quando riprovare.</td></tr>
+    <tr><td>Un'app non si installa</td><td>Leggi il messaggio nella barra in basso o in Attività: di solito manca uno strumento richiesto o lo strumento di installazione è vecchio (aggiorna lo Store da Aggiornamenti).</td></tr>
+    <tr><td>L'app non compare nell'auto</td><td>Riavvia l'unità: su iDrive 8 le app si attivano al riavvio.</td></tr>
+  </table>
+  <div class="note ok"><span class="t">Rete di sicurezza</span>Le modifiche dello Store sono sotto snapshot e reversibili (ripristino e rimozione). La codifica si ripristina dal tuo backup. Nessun ripristino richiede un nuovo flash.</div></div></section>
+
+</article>
+</div>
+</main>
+<footer><div class="wrap">
+  <div class="cols">
+    <div>
+      <img class="sk" src="assets/img/sick.svg" alt="S!ck.">
+      <p><span lang="en">MGU Store Manager — MGU Store on your BMW, from your Mac.</span><span lang="it">MGU Store Manager — MGU Store sulla tua BMW, dal tuo Mac.</span><br>sicklab.it</p>
+    </div>
+    <div><h4><span lang="en">Product</span><span lang="it">Prodotto</span></h4><a href="index.html#apps"><span lang="en">Apps you can install</span><span lang="it">App che puoi installare</span></a><a href="index.html#how"><span lang="en">How it works</span><span lang="it">Come funziona</span></a><a href="index.html#drive">Drive (AWD → RWD)</a><a href="index.html#pricing"><span lang="en">Pricing</span><span lang="it">Prezzi</span></a><a href="https://drive.google.com/file/d/1ylP1SdAPowxpLHwGkj8nnYrrPrIfiD7O/view?usp=sharing" rel="noopener"><span lang="en">Download the app</span><span lang="it">Scarica l'app</span></a></div>
+    <div><h4><span lang="en">Support</span><span lang="it">Supporto</span></h4><a href="guide.html"><span lang="en">Step-by-step guide</span><span lang="it">Guida passo passo</span></a><a href="help.html"><span lang="en">Troubleshooting</span><span lang="it">Risoluzione problemi</span></a><a href="index.html#faq">FAQ</a><a href="mailto:info@sicklab.it"><span lang="en">Contact</span><span lang="it">Contatti</span></a></div>
+    <div><h4><span lang="en">Legal</span><span lang="it">Note legali</span></h4><a href="legal.html#terms"><span lang="en">Terms of sale</span><span lang="it">Condizioni di vendita</span></a><a href="legal.html#privacy">Privacy</a><a href="legal.html#withdrawal"><span lang="en">Right of withdrawal</span><span lang="it">Diritto di recesso</span></a><a href="legal.html#seller"><span lang="en">Seller</span><span lang="it">Venditore</span></a><a href="legal.html#credits"><span lang="en">Credits</span><span lang="it">Crediti</span></a></div>
+  </div>
+  <div class="legal"><span lang="en">MGU Store Manager is an unofficial project, not affiliated with, endorsed or sponsored by BMW AG. BMW and iDrive are trademarks of BMW AG, used only to describe compatibility. It changes your car's software: use it at your own risk. MGU Store and the community apps shown are free, open-source projects by their own authors, credited next to each image.</span><span lang="it">MGU Store Manager è un progetto non ufficiale, non affiliato, approvato o sponsorizzato da BMW AG. BMW e iDrive sono marchi di BMW AG, citati solo per indicare la compatibilità. Modifica il software della tua auto: lo usi a tuo rischio. MGU Store e le app della community mostrate sono progetti gratuiti e open source dei loro autori, citati accanto a ogni immagine.</span><br>© 2026 SickLab</div>
+</div></footer>
+<script src="assets/site.js?v=1795530236"></script>
+</body>
+</html>

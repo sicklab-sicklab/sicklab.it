@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Help &amp; troubleshooting — MGU Store Manager</title>
+<meta name="title-en" content="Help &amp; troubleshooting — MGU Store Manager"><meta name="title-it" content="Aiuto e problemi — MGU Store Manager">
+<meta name="description" content="Fixes for the most common problems with MGU Store Manager.">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://sicklab.it/help.html">
+<meta property="og:title" content="Help &amp; troubleshooting — MGU Store Manager"><meta property="og:description" content="Fixes for the most common problems with MGU Store Manager."><meta property="og:url" content="https://sicklab.it/help.html">
+<meta property="og:image" content="https://sicklab.it/assets/img/og.jpg"><meta property="og:type" content="website"><meta property="og:site_name" content="sicklab.it">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.png"><link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css?v=1795530236">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="index.html"><img class="ic" src="assets/img/icon.png" alt="">MGU Store Manager<span class="bar"></span><img class="sk" src="assets/img/sick.svg" alt="S!ck."></a>
+  <button class="menu-btn" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
+  <nav class="links">
+    <a href="index.html#apps"><span lang="en">Apps</span><span lang="it">App</span></a>
+    <a href="index.html#how"><span lang="en">How it works</span><span lang="it">Come funziona</span></a>
+    <a href="index.html#pricing"><span lang="en">Pricing</span><span lang="it">Prezzi</span></a>
+    <a href="guide.html"><span lang="en">Guide</span><span lang="it">Guida</span></a>
+    <a href="help.html"><span lang="en">Help</span><span lang="it">Aiuto</span></a>
+    <span class="langsw"><button data-set="en">EN</button><button data-set="it">IT</button></span>
+    <a class="btn sm" href="https://drive.google.com/file/d/1ylP1SdAPowxpLHwGkj8nnYrrPrIfiD7O/view?usp=sharing" rel="noopener"><span lang="en">Download</span><span lang="it">Scarica</span></a>
+    <a class="btn sm ghost" href="index.html#pricing"><span lang="en">Buy</span><span lang="it">Acquista</span></a>
+  </nav>
+</div></header>
+<main>
+<div class="wrap doc">
+<aside>
+  <a href="#install"><span class="n">1</span><span lang="en">Installing the app</span><span lang="it">Installare l'app</span></a>
+  <a href="#licence"><span class="n">2</span><span lang="en">Licence</span><span lang="it">Licenza</span></a>
+  <a href="#connect"><span class="n">3</span><span lang="en">Connecting the car</span><span lang="it">Collegare l'auto</span></a>
+  <a href="#setup"><span class="n">4</span><span lang="en">Setup and flash</span><span lang="it">Configurazione e flash</span></a>
+  <a href="#coding"><span class="n">5</span><span lang="en">Coding and BimmerCode</span><span lang="it">Codifica e BimmerCode</span></a>
+  <a href="#apps"><span class="n">6</span><span lang="en">Store and apps</span><span lang="it">Store e app</span></a>
+  <a href="#drive"><span class="n">7</span>Drive (AWD/RWD)</a>
+  <a href="#contact"><span class="n">?</span><span lang="en">Still stuck?</span><span lang="it">Ancora bloccato?</span></a>
+</aside>
+<article>
+  <header>
+    <span class="kicker"><span lang="en">Help</span><span lang="it">Aiuto</span></span>
+    <h1 style="font-size:clamp(34px,5vw,52px)"><span lang="en">Troubleshooting</span><span lang="it">Risoluzione dei problemi</span></h1>
+    <p class="lead"><span lang="en">The app's message tells you what went wrong: look for it below. Every command and its full output is also in the app's <b>Activity</b> section.</span><span lang="it">Il messaggio dell'app ti dice cosa non va: cercalo qui sotto. Ogni comando con il suo output completo è anche nella sezione <b>Attività</b> dell'app.</span></p>
+    <input class="search" type="search" data-ph-en="Search a problem or a message…" data-ph-it="Cerca un problema o un messaggio…" placeholder="Search a problem or a message…">
+    <div class="note warn"><span class="t"><span lang="en">While the app is writing to the car</span><span lang="it">Mentre l'app scrive sull'auto</span></span><span lang="en">Car parked, awake and powered (battery charger or engine running), ENET cable connected until the end. Don't quit the app and don't unplug the cable while the bottom bar says it's working on the car.</span><span lang="it">Auto ferma, accesa e alimentata (caricabatterie o motore acceso), cavo ENET collegato fino alla fine. Non chiudere l'app e non staccare il cavo mentre la barra in basso dice che sta lavorando sull'auto.</span></div>
+  </header>
+
+  <section id="install">
+    <h2><span class="n">1</span><span lang="en">Installing the app</span><span lang="it">Installare l'app</span></h2>
+    <div class="prob"><h3><span lang="en">macOS won't open the app</span><span lang="it">macOS non apre l'app</span></h3>
+      <p><span lang="en">The app isn't signed with an Apple certificate, so macOS blocks the first launch. Open it once, then go to <b>System Settings → Privacy & Security</b> and click <b>Open Anyway</b> next to MGU Store Manager. Or right-click the app → <b>Open</b>.</span><span lang="it">L'app non è firmata con un certificato Apple, quindi macOS blocca il primo avvio. Aprila una volta, poi vai in <b>Impostazioni di Sistema → Privacy e sicurezza</b> e fai clic su <b>Apri comunque</b> accanto a MGU Store Manager. Oppure clic destro sull'app → <b>Apri</b>.</span></p></div>
+    <div class="prob"><h3><span lang="en">“Interpreter not found” / Python or Node.js missing</span><span lang="it">“Interprete non trovato” / manca Python o Node.js</span></h3>
+      <p><span lang="en">Install <b>Python 3</b> (python.org/downloads/macos, or <code>xcode-select --install</code>) and <b>Node.js 18 or newer</b> (the LTS .pkg from nodejs.org). Then in the setup wizard → <b>Tools</b> press <b>Check again</b>: both dots turn green.</span><span lang="it">Installa <b>Python 3</b> (python.org/downloads/macos, oppure <code>xcode-select --install</code>) e <b>Node.js 18 o successivo</b> (il .pkg LTS da nodejs.org). Poi nella procedura guidata → <b>Strumenti</b> premi <b>Ricontrolla</b>: i due pallini diventano verdi.</span></p></div>
+    <div class="prob"><h3><span lang="en">“Prepare environment” fails</span><span lang="it">“Prepara ambiente” non riesce</span></h3>
+      <p><span lang="en">It downloads a Python library, so the Mac needs internet. Check the connection and press it again. If it still fails, copy the error from Activity and send it to us.</span><span lang="it">Scarica una libreria Python, quindi al Mac serve internet. Controlla la connessione e premilo di nuovo. Se non va ancora, copia l'errore da Attività e mandacelo.</span></p></div>
+    <div class="prob"><h3><span lang="en">Where are my files?</span><span lang="it">Dove sono i miei file?</span></h3>
+      <p><span lang="en">Everything is in <code>~/Library/Application Support/MGU Store Manager</code>: the car's SSH key, the backups, the local Store and your licence. Open it from <b>Tools → Working folder → Show in Finder</b>, and keep a copy (for example with Time Machine).</span><span lang="it">Tutto è in <code>~/Library/Application Support/MGU Store Manager</code>: la chiave SSH dell'auto, i backup, lo Store locale e la licenza. Aprila da <b>Strumenti → Cartella di lavoro → Mostra nel Finder</b>, e tienine una copia (per esempio con Time Machine).</span></p></div>
+  </section>
+
+  <section id="licence">
+    <h2><span class="n">2</span><span lang="en">Licence</span><span lang="it">Licenza</span></h2>
+    <div class="prob"><h3><span lang="en">I didn't receive my licence</span><span lang="it">Non ho ricevuto la licenza</span></h3>
+      <p><span lang="en">Licences are sent within 24 hours to the email you entered at checkout. Check the spam folder. If it's not there, <a href="mailto:info@sicklab.it">write to us</a> with the email you used to pay.</span><span lang="it">Le licenze arrivano entro 24 ore all'email inserita al pagamento. Controlla lo spam. Se non c'è, <a href="mailto:info@sicklab.it">scrivici</a> con l'email usata per pagare.</span></p></div>
+    <div class="prob"><h3><span lang="en">“This licence is for another Mac”</span><span lang="it">“Questa licenza è per un altro Mac”</span></h3>
+      <p><span lang="en">The licence was issued for a different Machine ID. Check that the Machine ID on this Mac's licence screen is the one you entered at checkout, and <a href="mailto:info@sicklab.it">write to us</a> if it isn't.</span><span lang="it">La licenza è stata emessa per un altro Machine ID. Controlla che il Machine ID nella schermata della licenza di questo Mac sia quello inserito al pagamento, e <a href="mailto:info@sicklab.it">scrivici</a> se non lo è.</span></p></div>
+    <div class="prob"><h3><span lang="en">“Not covered by the licence”</span><span lang="it">“Non coperta dalla licenza”</span></h3>
+      <p><span lang="en">The connected car's VIN isn't in your licences. Buy an extra car licence for that VIN and add it in <b>Licence → Licence and language… → Add licence</b>. Reading the car still works; only actions that write to it are blocked.</span><span lang="it">Il VIN dell'auto collegata non è nelle tue licenze. Compra una licenza auto in più per quel VIN e aggiungila in <b>Licenza → Licenza e lingua… → Aggiungi licenza</b>. Leggere l'auto funziona comunque; si bloccano solo le azioni che la modificano.</span></p></div>
+    <div class="prob"><h3><span lang="en">“The car didn't report its VIN”</span><span lang="it">“L'auto non ha comunicato il VIN”</span></h3>
+      <p><span lang="en">Connect with the ENET cable (over the car's Wi-Fi hotspot the car doesn't report its VIN), switch the ignition on and press <b>Connect / detect</b> again.</span><span lang="it">Collegati con il cavo ENET (dall'hotspot Wi-Fi dell'auto il VIN non viene comunicato), accendi il quadro e premi di nuovo <b>Collega / rileva</b>.</span></p></div>
+    <div class="prob"><h3><span lang="en">“Connect the Mac to the internet”</span><span lang="it">“Collega il Mac a internet”</span></h3>
+      <p><span lang="en">Time licences check the date online at least every 14 days. Connect the Mac and the app unlocks by itself.</span><span lang="it">Le licenze a tempo controllano la data online almeno ogni 14 giorni. Collega il Mac e l'app si sblocca da sola.</span></p></div>
+    <div class="prob"><h3><span lang="en">“The Mac's clock has been set back”</span><span lang="it">“L'orologio del Mac è stato spostato indietro”</span></h3>
+      <p><span lang="en">Set date and time to automatic (<b>System Settings → General → Date & Time</b>) or connect to the internet.</span><span lang="it">Imposta data e ora automatiche (<b>Impostazioni di Sistema → Generali → Data e ora</b>) oppure collegati a internet.</span></p></div>
+    <div class="prob"><h3><span lang="en">“Licence expired”</span><span lang="it">“Licenza scaduta”</span></h3>
+      <p><span lang="en">Buy a new licence and paste it. An expired licence can't be used again on that Mac. If the app was writing to the car when it expired, it locked only after finishing.</span><span lang="it">Compra una nuova licenza e incollala. Una licenza scaduta non si può riusare su quel Mac. Se l'app stava scrivendo sull'auto alla scadenza, si è bloccata solo dopo aver finito.</span></p></div>
+  </section>
+
+  <section id="connect">
+    <h2><span class="n">3</span><span lang="en">Connecting the car</span><span lang="it">Collegare l'auto</span></h2>
+    <div class="prob"><h3><span lang="en">The car is not detected</span><span lang="it">L'auto non viene rilevata</span></h3>
+      <ol><li><span lang="en">Check the ENET cable in the OBD socket and the Ethernet adapter on the Mac.</span><span lang="it">Controlla il cavo ENET nella presa OBD e l'adattatore Ethernet sul Mac.</span></li>
+      <li><span lang="en">Switch the ignition on (the car must be awake).</span><span lang="it">Accendi il quadro (l'auto deve essere sveglia).</span></li>
+      <li><span lang="en">In the Mac's network settings, the Ethernet adapter must be active with an automatic address.</span><span lang="it">Nelle impostazioni di rete del Mac, l'adattatore Ethernet deve essere attivo con indirizzo automatico.</span></li>
+      <li><span lang="en">Press <b>Connect / detect</b> again; wait a few seconds after switching on.</span><span lang="it">Premi di nuovo <b>Collega / rileva</b>; aspetta qualche secondo dopo l'accensione.</span></li></ol></div>
+    <div class="prob"><h3><span lang="en">The car goes to sleep during the operation</span><span lang="it">L'auto si spegne durante l'operazione</span></h3>
+      <p><span lang="en">Keep it awake: ignition on, a battery charger connected or the engine running for long operations, doors closed so it doesn't time out.</span><span lang="it">Tienila sveglia: quadro acceso, caricabatterie collegato o motore acceso per le operazioni lunghe, porte chiuse perché non vada in timeout.</span></p></div>
+  </section>
+
+  <section id="setup">
+    <h2><span class="n">4</span><span lang="en">Setup and flash</span><span lang="it">Configurazione e flash</span></h2>
+    <div class="prob"><h3><span lang="en">A step of the wizard stays locked</span><span lang="it">Un passo della procedura resta bloccato</span></h3>
+      <p><span lang="en">Each step unlocks only when the previous one is complete. In <b>Backup</b> you need both the automatic capture and the ticked confirmation of your BimmerCode backup.</span><span lang="it">Ogni passo si sblocca solo quando il precedente è completo. In <b>Backup</b> servono sia la cattura automatica sia la spunta di conferma del backup con BimmerCode.</span></p></div>
+    <div class="prob"><h3><span lang="en">The app won't flash again</span><span lang="it">L'app non rifà il flash</span></h3>
+      <p><span lang="en">On purpose: the flash is done once only per head unit. If access is lost later, use <b>Tools → Repair key</b> instead of flashing again.</span><span lang="it">Di proposito: il flash si fa una sola volta per unità. Se in seguito l'accesso si perde, usa <b>Strumenti → Ripara chiave</b> invece di rifare il flash.</span></p></div>
+    <div class="prob"><h3><span lang="en">“Install” stops: the coding is still reset</span><span lang="it">“Installa” si ferma: la codifica è ancora azzerata</span></h3>
+      <p><span lang="en">The Store installer stops by itself until the coding is restored. Do the <b>Restore</b> step first (BimmerCode), then install.</span><span lang="it">L'installer dello Store si ferma da solo finché la codifica non è ripristinata. Fai prima il passo <b>Ripristino</b> (BimmerCode), poi installa.</span></p></div>
+  </section>
+
+  <section id="coding">
+    <h2><span class="n">5</span><span lang="en">Coding and BimmerCode</span><span lang="it">Codifica e BimmerCode</span></h2>
+    <div class="prob"><h3><span lang="en">After the flash some functions are reset</span><span lang="it">Dopo il flash alcune funzioni sono azzerate</span></h3>
+      <p><span lang="en">Expected: the flash resets the head unit's coding. Restore your BimmerCode backup (guide, chapter 7), restart the head unit and check language, units, camera and your options.</span><span lang="it">È normale: il flash azzera la codifica dell'unità. Ripristina il backup di BimmerCode (guida, capitolo 7), riavvia l'unità e controlla lingua, unità di misura, telecamera e le tue opzioni.</span></p></div>
+    <div class="prob"><h3><span lang="en">BimmerCode can't restore</span><span lang="it">BimmerCode non riesce a ripristinare</span></h3>
+      <p><span lang="en">Don't flash again, it doesn't help. Recode the head unit with E-Sys from your NCD file. If E-Sys reports no CAFD (FFFFFFFF), first inject the CAFD (its ID is in the app's pre-flash capture), then write the NCD.</span><span lang="it">Non rifare il flash, non serve. Ricodifica l'unità con E-Sys dal tuo file NCD. Se E-Sys segnala nessun CAFD (FFFFFFFF), prima inietta il CAFD (il suo ID è nella cattura pre-flash dell'app), poi scrivi l'NCD.</span></p></div>
+    <div class="prob"><h3><span lang="en">BMW Digital Key doesn't work</span><span lang="it">La BMW Digital Key non funziona</span></h3>
+      <p><span lang="en">The flash deletes the Digital Key pairings. Add your phone and watch again from the My BMW app, as for a new key.</span><span lang="it">Il flash cancella gli abbinamenti della Digital Key. Aggiungi di nuovo telefono e orologio dall'app My BMW, come per una chiave nuova.</span></p></div>
+    <div class="prob"><h3><span lang="en">No sound or odd audio (Bowers & Wilkins / surround)</span><span lang="it">Niente audio o audio strano (Bowers & Wilkins / surround)</span></h3>
+      <p><span lang="en">On some cars with premium audio the sound needs the audio coding and a calibration with ISTA after the flash.</span><span lang="it">Su alcune auto con audio premium serve la codifica audio e una calibrazione con ISTA dopo il flash.</span></p></div>
+  </section>
+
+  <section id="apps">
+    <h2><span class="n">6</span><span lang="en">Store and apps</span><span lang="it">Store e app</span></h2>
+    <div class="prob"><h3><span lang="en">The app doesn't appear in the car</span><span lang="it">L'app non compare nell'auto</span></h3>
+      <p><span lang="en">Restart the head unit: on iDrive 8 apps activate at the restart (Store on the car, or <b>Tools → Restart head unit</b>).</span><span lang="it">Riavvia l'unità: su iDrive 8 le app si attivano al riavvio (dallo Store nell'auto, oppure <b>Strumenti → Riavvia head unit</b>).</span></p></div>
+    <div class="prob"><h3><span lang="en">An app doesn't install</span><span lang="it">Un'app non si installa</span></h3>
+      <p><span lang="en">Read the message in the bottom bar or in Activity. Usually a required tool is missing (for example Seats and Ambient Light need Comfort) or the car's deploy tool is old: update the Store from <b>Updates</b>.</span><span lang="it">Leggi il messaggio nella barra in basso o in Attività. Di solito manca uno strumento richiesto (per esempio Seats e Ambient Light richiedono Comfort) o lo strumento di installazione dell'auto è vecchio: aggiorna lo Store da <b>Aggiornamenti</b>.</span></p></div>
+    <div class="prob"><h3><span lang="en">“GitHub limit reached”</span><span lang="it">“Limite di GitHub raggiunto”</span></h3>
+      <p><span lang="en">GitHub allows 60 requests an hour without an account. The Store shows the last saved check and when to try again.</span><span lang="it">GitHub permette 60 richieste all'ora senza account. Lo Store mostra l'ultimo controllo salvato e quando riprovare.</span></p></div>
+    <div class="prob"><h3><span lang="en">An app is only installable from the car</span><span lang="it">Un'app si installa solo dall'auto</span></h3>
+      <p><span lang="en">Apps that a source builds on the car are installed from the Store on the car's display, which needs internet in the car (your phone's hotspot).</span><span lang="it">Le app che una fonte compila nell'auto si installano dallo Store sullo schermo dell'auto, che ha bisogno di internet nell'auto (hotspot del telefono).</span></p></div>
+    <div class="prob"><h3><span lang="en">No ENET? Use a USB stick</span><span lang="it">Niente ENET? Usa una chiavetta USB</span></h3>
+      <p><span lang="en">Tick “Stick” on the apps, <b>Write to stick…</b>, then in the car <b>Store → USB → Install</b>. Works without SSH and without internet.</span><span lang="it">Spunta “Chiavetta” sulle app, <b>Scrivi su chiavetta…</b>, poi nell'auto <b>Store → USB → Installa</b>. Funziona senza SSH e senza internet.</span></p></div>
+  </section>
+
+  <section id="drive">
+    <h2><span class="n">7</span>Drive (AWD/RWD)</h2>
+    <div class="prob"><h3><span lang="en">The command is refused</span><span lang="it">Il comando viene rifiutato</span></h3>
+      <p><span lang="en">The DSC accepts it only with ignition on, engine off, selector in P, parking brake on and the car stationary. Enable <b>Commands</b> first; the switch needs two presses within 6 seconds.</span><span lang="it">Il DSC lo accetta solo con quadro acceso, motore spento, leva in P, freno di stazionamento inserito e auto ferma. Prima attiva <b>Comandi</b>; il passaggio richiede due tocchi entro 6 secondi.</span></p></div>
+    <div class="prob"><h3><span lang="en">An all-wheel-drive notice or a fault after the switch</span><span lang="it">Un avviso della trazione integrale o un errore dopo il passaggio</span></h3>
+      <p><span lang="en">Expected: the cluster shows a notice and the DSC may store a fault, which the app can clear afterwards. Switch the car off and on to get xDrive back.</span><span lang="it">È normale: il quadro mostra un avviso e il DSC può memorizzare un errore, che l'app può cancellare dopo. Spegni e riaccendi l'auto per riavere l'xDrive.</span></p></div>
+    <div class="prob"><h3><span lang="en">My car stays front-wheel drive</span><span lang="it">La mia auto resta a trazione anteriore</span></h3>
+      <p><span lang="en">Front-wheel-drive based models (1 Series F40, 2 Series Gran Coupé F44 and Active Tourer, X1, X2) can't become rear-wheel drive. Drive is for iDrive 8 xDrive cars with a longitudinal engine.</span><span lang="it">I modelli a trazione anteriore di base (Serie 1 F40, Serie 2 Gran Coupé F44 e Active Tourer, X1, X2) non possono diventare a trazione posteriore. Drive è per le auto xDrive con iDrive 8 e motore longitudinale.</span></p></div>
+  </section>
+
+  <section id="contact">
+    <h2><span class="n">?</span><span lang="en">Still stuck?</span><span lang="it">Ancora bloccato?</span></h2>
+    <p><span lang="en">Write to <a href="mailto:info@sicklab.it">info@sicklab.it</a> with your car model and year, the head unit type, what you were doing and the message from the app (copy it from Activity). We usually answer within one working day.</span><span lang="it">Scrivi a <a href="mailto:info@sicklab.it">info@sicklab.it</a> con modello e anno dell'auto, tipo di unità, cosa stavi facendo e il messaggio dell'app (copialo da Attività). Di solito rispondiamo entro un giorno lavorativo.</span></p>
+    <div class="note ok"><span class="t"><span lang="en">Safety net</span><span lang="it">Rete di sicurezza</span></span><span lang="en">The Store's changes are under snapshot and reversible. The coding comes back from your backup. No restore needs a new flash.</span><span lang="it">Le modifiche dello Store sono sotto snapshot e reversibili. La codifica torna dal tuo backup. Nessun ripristino richiede un nuovo flash.</span></div>
+  </section>
+</article>
+</div>
+
+</main>
+<footer><div class="wrap">
+  <div class="cols">
+    <div>
+      <img class="sk" src="assets/img/sick.svg" alt="S!ck.">
+      <p><span lang="en">MGU Store Manager — MGU Store on your BMW, from your Mac.</span><span lang="it">MGU Store Manager — MGU Store sulla tua BMW, dal tuo Mac.</span><br>sicklab.it</p>
+    </div>
+    <div><h4><span lang="en">Product</span><span lang="it">Prodotto</span></h4><a href="index.html#apps"><span lang="en">Apps you can install</span><span lang="it">App che puoi installare</span></a><a href="index.html#how"><span lang="en">How it works</span><span lang="it">Come funziona</span></a><a href="index.html#drive">Drive (AWD → RWD)</a><a href="index.html#pricing"><span lang="en">Pricing</span><span lang="it">Prezzi</span></a><a href="https://drive.google.com/file/d/1ylP1SdAPowxpLHwGkj8nnYrrPrIfiD7O/view?usp=sharing" rel="noopener"><span lang="en">Download the app</span><span lang="it">Scarica l'app</span></a></div>
+    <div><h4><span lang="en">Support</span><span lang="it">Supporto</span></h4><a href="guide.html"><span lang="en">Step-by-step guide</span><span lang="it">Guida passo passo</span></a><a href="help.html"><span lang="en">Troubleshooting</span><span lang="it">Risoluzione problemi</span></a><a href="index.html#faq">FAQ</a><a href="mailto:info@sicklab.it"><span lang="en">Contact</span><span lang="it">Contatti</span></a></div>
+    <div><h4><span lang="en">Legal</span><span lang="it">Note legali</span></h4><a href="legal.html#terms"><span lang="en">Terms of sale</span><span lang="it">Condizioni di vendita</span></a><a href="legal.html#privacy">Privacy</a><a href="legal.html#withdrawal"><span lang="en">Right of withdrawal</span><span lang="it">Diritto di recesso</span></a><a href="legal.html#seller"><span lang="en">Seller</span><span lang="it">Venditore</span></a><a href="legal.html#credits"><span lang="en">Credits</span><span lang="it">Crediti</span></a></div>
+  </div>
+  <div class="legal"><span lang="en">MGU Store Manager is an unofficial project, not affiliated with, endorsed or sponsored by BMW AG. BMW and iDrive are trademarks of BMW AG, used only to describe compatibility. It changes your car's software: use it at your own risk. MGU Store and the community apps shown are free, open-source projects by their own authors, credited next to each image.</span><span lang="it">MGU Store Manager è un progetto non ufficiale, non affiliato, approvato o sponsorizzato da BMW AG. BMW e iDrive sono marchi di BMW AG, citati solo per indicare la compatibilità. Modifica il software della tua auto: lo usi a tuo rischio. MGU Store e le app della community mostrate sono progetti gratuiti e open source dei loro autori, citati accanto a ogni immagine.</span><br>© 2026 SickLab</div>
+</div></footer>
+<script src="assets/site.js?v=1795530236"></script>
+</body>
+</html>
