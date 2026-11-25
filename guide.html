@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://sicklab.it/assets/img/og.jpg"><meta property="og:type" content="website"><meta property="og:site_name" content="sicklab.it">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/img/favicon.png"><link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="stylesheet" href="assets/site.css?v=1795536422">
+<link rel="stylesheet" href="assets/site.css?v=1795619213">
 </head>
 <body>
 <header class="nav"><div class="wrap">
@@ -34,10 +34,10 @@
 <aside><a href="#ch1"><span class="n">1</span><span lang="en">What it is and what you need</span><span lang="it">Cos'è e cosa serve</span></a><a href="#ch2"><span class="n">2</span><span lang="en">Installing the app</span><span lang="it">Installare l'app</span></a><a href="#ch3"><span class="n">3</span><span lang="en">Language and licence</span><span lang="it">Lingua e licenza</span></a><a href="#ch4"><span class="n">4</span><span lang="en">Dependencies</span><span lang="it">Programmi necessari</span></a><a href="#ch5"><span class="n">5</span><span lang="en">First setup: the setup wizard</span><span lang="it">Prima configurazione: la procedura guidata</span></a><a href="#ch6"><span class="n">6</span><span lang="en">Backing up the coding with BimmerCode</span><span lang="it">Backup della codifica con BimmerCode</span></a><a href="#ch7"><span class="n">7</span><span lang="en">Restoring the coding with BimmerCode</span><span lang="it">Ripristino della codifica con BimmerCode</span></a><a href="#ch8"><span class="n">8</span><span lang="en">Installing apps on the car</span><span lang="it">Installare le app sull'auto</span></a><a href="#ch9"><span class="n">9</span><span lang="en">Updates and maintenance</span><span lang="it">Aggiornamenti e manutenzione</span></a><a href="#ch10"><span class="n">10</span><span lang="en">Safety and troubleshooting</span><span lang="it">Sicurezza e problemi</span></a><a href="help.html" style="margin-top:10px;color:var(--blue)"><span lang="en">→ Troubleshooting</span><span lang="it">→ Risoluzione problemi</span></a></aside>
 <article>
   <header>
-    <span class="kicker"><span lang="en">Guide</span><span lang="it">Guida</span> · MGU Store Manager 1.1</span>
+    <span class="kicker"><span lang="en">Guide</span><span lang="it">Guida</span> · MGU Store Manager 1.2</span>
     <h1 style="font-size:clamp(34px,5vw,52px)"><span lang="en">Installing MGU Store on your BMW, from your Mac</span><span lang="it">Installare MGU Store sulla tua BMW, dal tuo Mac</span></h1>
     <p class="lead"><span lang="en">Everything from the download to the first app in the car: licence, the tools it needs, the coding backup with BimmerCode, the setup wizard, the restore and installing apps.</span><span lang="it">Tutto, dal download alla prima app nell'auto: licenza, programmi necessari, backup della codifica con BimmerCode, procedura guidata, ripristino e installazione delle app.</span></p>
-    <div class="note tip"><span class="t"><span lang="en">Read it before you start</span><span lang="it">Leggila prima di iniziare</span></span><span lang="en">Chapters 6 and 7 (coding backup and restore) are the important ones: enabling SSH resets the head unit's coding, and your backup is the only way to get it back.</span><span lang="it">I capitoli 6 e 7 (backup e ripristino della codifica) sono i più importanti: abilitare SSH azzera la codifica dell'unità, e il tuo backup è l'unico modo per riaverla.</span></div>
+    <div class="note warn"><span class="t"><span lang="en">First of all: what you need</span><span lang="it">Prima di tutto: cosa ti serve</span></span><span lang="en"><b>1. An ENET cable</b> (the car's OBD socket to Ethernet). <b>2. A USB-C to Ethernet adapter</b> if your Mac has no Ethernet port (all recent MacBooks). <b>3. BimmerCode</b> (iPhone or Android, with its OBD adapter) to <b>back up the head unit's coding before you start</b>: enabling SSH resets that coding, and without the backup to restore the car's display will no longer work completely. Chapters 6 and 7 show how.</span><span lang="it"><b>1. Un cavo ENET</b> (dalla presa OBD dell'auto a Ethernet). <b>2. Un adattatore USB-C → Ethernet</b> se il tuo Mac non ha la porta Ethernet (tutti i MacBook recenti). <b>3. BimmerCode</b> (iPhone o Android, con il suo adattatore OBD) per <b>fare il backup della codifica dell'unità centrale prima di iniziare</b>: abilitare SSH azzera quella codifica, e senza il backup da ripristinare il display dell'auto non funzionerà più completamente. I capitoli 6 e 7 spiegano come.</span></div>
   </header>
 <section id="ch1"><div lang="en"><h2><span class="n">1</span>What it is and what you need</h2>
   <p><b>MGU Store Manager</b> is a macOS app that installs <b>MGU Store</b> on your BMW's head unit (iDrive 7 and iDrive 8, MGU units) and lets you manage the car's apps from your Mac, without using Terminal. It works as a remote control for two open-source tools that are already included in the app: <b>idrive7-8-ssh-root</b> (enables SSH access to the head unit) and <b>mgu-store</b> (the Store on the car and its installer). Every action that writes to the car starts only after you confirm it.</p>
@@ -257,7 +257,7 @@
     <li>Install it like any other app (Install over ENET, or the USB stick), then restart the head unit.</li>
     <li>It starts with <b>Commands disabled</b>: until you enable them it only reads. The command needs two presses within 6 seconds.</li>
     <li>The DSC accepts it only with the <b>ignition on, engine off, selector in P, parking brake on and the car stationary</b>. Then start the engine without switching the ignition off: the cluster shows an all-wheel-drive notice and the DSC may store a fault, which the app can clear afterwards.</li>
-    <li>It is for <b>xDrive cars with a longitudinal engine</b> (rear-wheel-drive based). Front-wheel-drive based models (1 Series F40, 2 Series Gran Coupé F44 / Active Tourer, X1, X2) cannot become rear-wheel drive. Experimental: use it only on private ground.</li>
+    <li>It is for <b>xDrive cars with a longitudinal engine</b> (rear-wheel-drive based). Front-wheel-drive based models (1 Series F40, 2 Series Gran Coupé F44 / Active Tourer, X1, X2) cannot become rear-wheel drive, and on some longitudinal models the DSC refuses the command anyway. Experimental: use it only on private ground.</li>
   </ul></div><div lang="it"><h2><span class="n">8</span>Installare le app sull'auto</h2>
   <p>Le app si installano dalla sezione <b>Store</b>: la scheda <b>App</b> le mostra in evidenza e per categoria, la scheda <b>Fonti</b> mostra da dove arrivano.</p>
   <div class="steps">
@@ -275,7 +275,7 @@
     <li>Installala come ogni altra app (Installa via ENET, o la chiavetta USB), poi riavvia l'unità.</li>
     <li>Parte con i <b>Comandi disabilitati</b>: finché non li abiliti legge soltanto. Il comando richiede due tocchi entro 6 secondi.</li>
     <li>Il DSC lo accetta solo con <b>quadro acceso, motore spento, leva in P, freno di stazionamento inserito e auto ferma</b>. Poi accendi il motore senza spegnere il quadro: il quadro strumenti mostra un avviso della trazione integrale e il DSC può memorizzare un errore, che l'app può cancellare dopo.</li>
-    <li>È per le <b>auto xDrive a motore longitudinale</b> (a trazione posteriore di base). I modelli a trazione anteriore di base (Serie 1 F40, Serie 2 Gran Coupé F44 / Active Tourer, X1, X2) non possono diventare a trazione posteriore. Sperimentale: usala solo in aree private.</li>
+    <li>È per le <b>auto xDrive a motore longitudinale</b> (a trazione posteriore di base). I modelli a trazione anteriore di base (Serie 1 F40, Serie 2 Gran Coupé F44 / Active Tourer, X1, X2) non possono diventare a trazione posteriore, e su alcuni modelli a motore longitudinale il DSC rifiuta comunque il comando. Sperimentale: usala solo in aree private.</li>
   </ul></div></section>
 <section id="ch9"><div lang="en"><h2><span class="n">9</span>Updates and maintenance</h2>
   <ul>
@@ -343,6 +343,6 @@
   </div>
   <div class="legal"><span lang="en">MGU Store Manager is an unofficial project, not affiliated with, endorsed or sponsored by BMW AG. BMW and iDrive are trademarks of BMW AG, used only to describe compatibility. It changes your car's software: use it at your own risk. MGU Store and the community apps shown are free, open-source projects by their own authors, credited next to each image.</span><span lang="it">MGU Store Manager è un progetto non ufficiale, non affiliato, approvato o sponsorizzato da BMW AG. BMW e iDrive sono marchi di BMW AG, citati solo per indicare la compatibilità. Modifica il software della tua auto: lo usi a tuo rischio. MGU Store e le app della community mostrate sono progetti gratuiti e open source dei loro autori, citati accanto a ogni immagine.</span><br>© 2026 SickLab</div>
 </div></footer>
-<script src="assets/site.js?v=1795536422"></script>
+<script src="assets/site.js?v=1795619213"></script>
 </body>
 </html>
