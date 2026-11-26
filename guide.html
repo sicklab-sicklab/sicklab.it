@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Guide — MGU Store Manager</title>
-<meta name="title-en" content="Guide — MGU Store Manager"><meta name="title-it" content="Guida — MGU Store Manager">
+<title>Guide — DashLoader</title>
+<meta name="title-en" content="Guide — DashLoader"><meta name="title-it" content="Guida — DashLoader">
 <meta name="description" content="Step-by-step guide: install, licence, BimmerCode backup and restore, setup wizard, installing apps.">
 <meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://sicklab.it/guide.html">
-<meta property="og:title" content="Guide — MGU Store Manager"><meta property="og:description" content="Step-by-step guide: install, licence, BimmerCode backup and restore, setup wizard, installing apps."><meta property="og:url" content="https://sicklab.it/guide.html">
+<meta property="og:title" content="Guide — DashLoader"><meta property="og:description" content="Step-by-step guide: install, licence, BimmerCode backup and restore, setup wizard, installing apps."><meta property="og:url" content="https://sicklab.it/guide.html">
 <meta property="og:image" content="https://sicklab.it/assets/img/og.jpg"><meta property="og:type" content="website"><meta property="og:site_name" content="sicklab.it">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/img/favicon.png"><link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="stylesheet" href="assets/site.css?v=1795619213">
+<link rel="stylesheet" href="assets/site.css?v=1795719172">
 </head>
 <body>
 <header class="nav"><div class="wrap">
-  <a class="brand" href="index.html"><img class="ic" src="assets/img/icon.png" alt="">MGU Store Manager<span class="bar"></span><img class="sk" src="assets/img/sick.svg" alt="S!ck."></a>
+  <a class="brand" href="index.html"><img class="ic" src="assets/img/icon.png" alt="">DashLoader<span class="bar"></span><img class="sk" src="assets/img/sick.svg" alt="S!ck."></a>
   <button class="menu-btn" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
   <nav class="links">
     <a href="index.html#apps"><span lang="en">Apps</span><span lang="it">App</span></a>
@@ -25,7 +25,7 @@
     <a href="guide.html"><span lang="en">Guide</span><span lang="it">Guida</span></a>
     <a href="help.html"><span lang="en">Help</span><span lang="it">Aiuto</span></a>
     <span class="langsw"><button data-set="en">EN</button><button data-set="it">IT</button></span>
-    <a class="btn sm" href="https://github.com/sicklab-sicklab/sicklab.it/releases/latest/download/MGU-Store-Manager.dmg" rel="noopener"><span lang="en">Download</span><span lang="it">Scarica</span></a>
+    <a class="btn sm" href="https://github.com/sicklab-sicklab/sicklab.it/releases/latest/download/DashLoader.dmg" rel="noopener"><span lang="en">Download</span><span lang="it">Scarica</span></a>
     <a class="btn sm ghost" href="index.html#pricing"><span lang="en">Buy</span><span lang="it">Acquista</span></a>
   </nav>
 </div></header>
@@ -34,13 +34,13 @@
 <aside><a href="#ch1"><span class="n">1</span><span lang="en">What it is and what you need</span><span lang="it">Cos'è e cosa serve</span></a><a href="#ch2"><span class="n">2</span><span lang="en">Installing the app</span><span lang="it">Installare l'app</span></a><a href="#ch3"><span class="n">3</span><span lang="en">Language and licence</span><span lang="it">Lingua e licenza</span></a><a href="#ch4"><span class="n">4</span><span lang="en">Dependencies</span><span lang="it">Programmi necessari</span></a><a href="#ch5"><span class="n">5</span><span lang="en">First setup: the setup wizard</span><span lang="it">Prima configurazione: la procedura guidata</span></a><a href="#ch6"><span class="n">6</span><span lang="en">Backing up the coding with BimmerCode</span><span lang="it">Backup della codifica con BimmerCode</span></a><a href="#ch7"><span class="n">7</span><span lang="en">Restoring the coding with BimmerCode</span><span lang="it">Ripristino della codifica con BimmerCode</span></a><a href="#ch8"><span class="n">8</span><span lang="en">Installing apps on the car</span><span lang="it">Installare le app sull'auto</span></a><a href="#ch9"><span class="n">9</span><span lang="en">Updates and maintenance</span><span lang="it">Aggiornamenti e manutenzione</span></a><a href="#ch10"><span class="n">10</span><span lang="en">Safety and troubleshooting</span><span lang="it">Sicurezza e problemi</span></a><a href="help.html" style="margin-top:10px;color:var(--blue)"><span lang="en">→ Troubleshooting</span><span lang="it">→ Risoluzione problemi</span></a></aside>
 <article>
   <header>
-    <span class="kicker"><span lang="en">Guide</span><span lang="it">Guida</span> · MGU Store Manager 1.2</span>
-    <h1 style="font-size:clamp(34px,5vw,52px)"><span lang="en">Installing MGU Store on your BMW, from your Mac</span><span lang="it">Installare MGU Store sulla tua BMW, dal tuo Mac</span></h1>
+    <span class="kicker"><span lang="en">Guide</span><span lang="it">Guida</span> · DashLoader 1.3</span>
+    <h1 style="font-size:clamp(34px,5vw,52px)"><span lang="en">Installing apps on your BMW, from your Mac</span><span lang="it">Installare le app sulla tua BMW, dal tuo Mac</span></h1>
     <p class="lead"><span lang="en">Everything from the download to the first app in the car: licence, the tools it needs, the coding backup with BimmerCode, the setup wizard, the restore and installing apps.</span><span lang="it">Tutto, dal download alla prima app nell'auto: licenza, programmi necessari, backup della codifica con BimmerCode, procedura guidata, ripristino e installazione delle app.</span></p>
     <div class="note warn"><span class="t"><span lang="en">First of all: what you need</span><span lang="it">Prima di tutto: cosa ti serve</span></span><span lang="en"><b>1. An ENET cable</b> (the car's OBD socket to Ethernet). <b>2. A USB-C to Ethernet adapter</b> if your Mac has no Ethernet port (all recent MacBooks). <b>3. BimmerCode</b> (iPhone or Android, with its OBD adapter) to <b>back up the head unit's coding before you start</b>: enabling SSH resets that coding, and without the backup to restore the car's display will no longer work completely. Chapters 6 and 7 show how.</span><span lang="it"><b>1. Un cavo ENET</b> (dalla presa OBD dell'auto a Ethernet). <b>2. Un adattatore USB-C → Ethernet</b> se il tuo Mac non ha la porta Ethernet (tutti i MacBook recenti). <b>3. BimmerCode</b> (iPhone o Android, con il suo adattatore OBD) per <b>fare il backup della codifica dell'unità centrale prima di iniziare</b>: abilitare SSH azzera quella codifica, e senza il backup da ripristinare il display dell'auto non funzionerà più completamente. I capitoli 6 e 7 spiegano come.</span></div>
   </header>
 <section id="ch1"><div lang="en"><h2><span class="n">1</span>What it is and what you need</h2>
-  <p><b>MGU Store Manager</b> is a macOS app that installs <b>MGU Store</b> on your BMW's head unit (iDrive 7 and iDrive 8, MGU units) and lets you manage the car's apps from your Mac, without using Terminal. It works as a remote control for two open-source tools that are already included in the app: <b>idrive7-8-ssh-root</b> (enables SSH access to the head unit) and <b>mgu-store</b> (the Store on the car and its installer). Every action that writes to the car starts only after you confirm it.</p>
+  <p><b>DashLoader</b> is a macOS app that installs an open-source app Store on your BMW's head unit (iDrive 7 and iDrive 8, MGU units) and lets you manage the car's apps from your Mac, without using Terminal. It works as a remote control for two open-source tools that are already included in the app: <b>idrive7-8-ssh-root</b> (enables SSH access to the head unit) and an <b>open-source Store</b> for the car with its installer. Every action that writes to the car starts only after you confirm it.</p>
   <table>
     <tr><th style="width:30%">What</th><th>Details</th></tr>
     <tr><td>Mac</td><td>macOS 14 Sonoma or newer, Apple silicon or Intel. Internet connection.</td></tr>
@@ -51,7 +51,7 @@
     <tr><td>Programs</td><td>Python 3 and Node.js 18 or newer (chapter 4).</td></tr>
   </table>
   <div class="note warn"><span class="t">Read this first</span>Enabling SSH <b>flashes</b> the head unit: it <b>resets the head unit's coding (CAFD/NCD)</b> and <b>deletes the BMW Digital Key pairings</b>. Before the flash you must back up the coding (chapter 6); after the flash you restore it (chapter 7). The flash is done <b>once only</b> per car.</div></div><div lang="it"><h2><span class="n">1</span>Cos'è e cosa serve</h2>
-  <p><b>MGU Store Manager</b> è un'app per macOS che installa <b>MGU Store</b> nell'unità centrale della tua BMW (iDrive 7 e iDrive 8, unità MGU) e ti fa gestire le app dell'auto dal Mac, senza usare il Terminale. Fa da telecomando a due strumenti open source già inclusi nell'app: <b>idrive7-8-ssh-root</b> (abilita l'accesso SSH all'unità) e <b>mgu-store</b> (lo Store nell'auto e il suo installer). Ogni azione che scrive sull'auto parte solo dopo la tua conferma.</p>
+  <p><b>DashLoader</b> è un'app per macOS che installa uno store di app open source nell'unità centrale della tua BMW (iDrive 7 e iDrive 8, unità MGU) e ti fa gestire le app dell'auto dal Mac, senza usare il Terminale. Fa da telecomando a due strumenti open source già inclusi nell'app: <b>idrive7-8-ssh-root</b> (abilita l'accesso SSH all'unità) e uno <b>Store open source</b> per l'auto con il suo installer. Ogni azione che scrive sull'auto parte solo dopo la tua conferma.</p>
   <table>
     <tr><th style="width:30%">Cosa</th><th>Dettagli</th></tr>
     <tr><td>Mac</td><td>macOS 14 Sonoma o successivo, Apple silicon o Intel. Connessione a internet.</td></tr>
@@ -65,19 +65,19 @@
 <section id="ch2"><div lang="en"><h2><span class="n">2</span>Installing the app</h2>
   <div class="steps">
     <div class="step"><div><h4>Open the .dmg file</h4><p>A window opens with the app and the Applications folder.</p></div></div>
-    <div class="step"><div><h4>Drag the app into Applications</h4><p>Then eject the “MGU Store Manager” disk in Finder.</p></div></div>
-    <div class="step"><div><h4>First launch</h4><p>The app is not signed with an Apple certificate, so the first time macOS blocks it. Open it once, then go to <b>System Settings → Privacy &amp; Security</b> and click <b>Open Anyway</b> next to “MGU Store Manager”. You can also right-click the app → <b>Open</b>.</p></div></div>
+    <div class="step"><div><h4>Drag the app into Applications</h4><p>Then eject the “DashLoader” disk in Finder.</p></div></div>
+    <div class="step"><div><h4>First launch</h4><p>The app is not signed with an Apple certificate, so the first time macOS blocks it. Open it once, then go to <b>System Settings → Privacy &amp; Security</b> and click <b>Open Anyway</b> next to “DashLoader”. You can also right-click the app → <b>Open</b>.</p></div></div>
   </div>
   <h3>Where it keeps its data</h3>
-  <p>Everything the app creates is in <span class="path">~/Library/Application Support/MGU Store Manager</span>: your car's SSH key, the backups (<span class="path">04_backup</span>), the local Store with sources and packages (<span class="path">09_store-locale</span>), the tools and your licence. Open it from <b>Tools → Working folder → Show in Finder</b>.</p>
+  <p>Everything the app creates is in <span class="path">~/Library/Application Support/DashLoader</span>: your car's SSH key, the backups (<span class="path">04_backup</span>), the local Store with sources and packages (<span class="path">09_store-locale</span>), the tools and your licence. Open it from <b>Tools → Working folder → Show in Finder</b>.</p>
   <div class="note warn"><span class="t">Keep the working folder safe</span>It holds your head unit's SSH key and the coding backups. Copy it somewhere safe (for example with Time Machine). To uninstall the app just drag it to the Bin; the working folder stays until you delete it.</div></div><div lang="it"><h2><span class="n">2</span>Installare l'app</h2>
   <div class="steps">
     <div class="step"><div><h4>Apri il file .dmg</h4><p>Si apre una finestra con l'app e la cartella Applicazioni.</p></div></div>
-    <div class="step"><div><h4>Trascina l'app in Applicazioni</h4><p>Poi espelli il disco “MGU Store Manager” nel Finder.</p></div></div>
-    <div class="step"><div><h4>Primo avvio</h4><p>L'app non è firmata con un certificato Apple, quindi la prima volta macOS la blocca. Aprila una volta, poi vai in <b>Impostazioni di Sistema → Privacy e sicurezza</b> e fai clic su <b>Apri comunque</b> accanto a “MGU Store Manager”. Puoi anche fare clic destro sull'app → <b>Apri</b>.</p></div></div>
+    <div class="step"><div><h4>Trascina l'app in Applicazioni</h4><p>Poi espelli il disco “DashLoader” nel Finder.</p></div></div>
+    <div class="step"><div><h4>Primo avvio</h4><p>L'app non è firmata con un certificato Apple, quindi la prima volta macOS la blocca. Aprila una volta, poi vai in <b>Impostazioni di Sistema → Privacy e sicurezza</b> e fai clic su <b>Apri comunque</b> accanto a “DashLoader”. Puoi anche fare clic destro sull'app → <b>Apri</b>.</p></div></div>
   </div>
   <h3>Dove tiene i suoi dati</h3>
-  <p>Tutto ciò che l'app crea è in <span class="path">~/Library/Application Support/MGU Store Manager</span>: la chiave SSH dell'auto, i backup (<span class="path">04_backup</span>), lo Store locale con fonti e pacchetti (<span class="path">09_store-locale</span>), gli strumenti e la tua licenza. Aprila da <b>Strumenti → Cartella di lavoro → Mostra nel Finder</b>.</p>
+  <p>Tutto ciò che l'app crea è in <span class="path">~/Library/Application Support/DashLoader</span>: la chiave SSH dell'auto, i backup (<span class="path">04_backup</span>), lo Store locale con fonti e pacchetti (<span class="path">09_store-locale</span>), gli strumenti e la tua licenza. Aprila da <b>Strumenti → Cartella di lavoro → Mostra nel Finder</b>.</p>
   <div class="note warn"><span class="t">Tieni al sicuro la cartella di lavoro</span>Contiene la chiave SSH dell'unità e i backup della codifica. Copiala in un posto sicuro (per esempio con Time Machine). Per disinstallare l'app basta trascinarla nel Cestino; la cartella di lavoro resta finché non la cancelli.</div></div></section>
 <section id="ch3"><div lang="en"><h2><span class="n">3</span>Language and licence</h2>
   <h3>Language</h3>
@@ -171,7 +171,7 @@
     <div class="step"><div><h4>Enable SSH</h4><p>Flashing the debug image opens SSH access; with <b>Persistent SSH</b> it stays active for good. It <b>resets the coding and the BMW Digital Key</b>: done once only per head unit, and the app never repeats it.</p></div></div>
     <div class="step"><div><h4>Restore</h4><p>Put the coding back from your backup with BimmerCode or E-Sys (chapter 7) and pair the Digital Key again. Then press <b>Save the coding over SSH</b>: from now on the app makes coding backups and restores by itself.</p></div></div>
     <div class="step"><div><h4>Install</h4><p><b>Install / Update Store</b> downloads and installs the Store with its updater, renderer and tools; it stops by itself if the coding is still reset. Then <b>Restart head unit</b>: the car's screen goes off and restarts.</p></div></div>
-    <div class="step"><div><h4>Finish</h4><p>After the restart the MGU Store tile appears among the car's apps.</p></div></div>
+    <div class="step"><div><h4>Finish</h4><p>After the restart the Store tile appears among the car's apps.</p></div></div>
   </div></div><div lang="it"><h2><span class="n">5</span>Prima configurazione: la procedura guidata</h2>
   <p>La sezione <b>Procedura guidata</b> ti porta attraverso otto passi, in ordine; ognuno si sblocca solo quando il precedente è completo. Al primo avvio parte un tour dell'app di un minuto; puoi rivederlo con il pulsante <b>?</b> in alto.</p>
   <div class="steps">
@@ -182,7 +182,7 @@
     <div class="step"><div><h4>Abilita SSH</h4><p>Il flash dell'immagine di debug apre l'accesso SSH; con <b>SSH persistente</b> resta attivo per sempre. <b>Azzera la codifica e la BMW Digital Key</b>: si fa una sola volta per unità, e l'app non lo ripete mai.</p></div></div>
     <div class="step"><div><h4>Ripristino</h4><p>Rimetti la codifica dal tuo backup con BimmerCode o E-Sys (capitolo 7) e riabbina la Digital Key. Poi premi <b>Salva la codifica via SSH</b>: da qui in poi l'app fa da sola backup e ripristini della codifica.</p></div></div>
     <div class="step"><div><h4>Installa</h4><p><b>Installa / Aggiorna Store</b> scarica e installa lo Store con updater, renderer e strumenti; si ferma da solo se la codifica è ancora azzerata. Poi <b>Riavvia head unit</b>: lo schermo dell'auto si spegne e riparte.</p></div></div>
-    <div class="step"><div><h4>Fine</h4><p>Dopo il riavvio il riquadro di MGU Store compare tra le app dell'auto.</p></div></div>
+    <div class="step"><div><h4>Fine</h4><p>Dopo il riavvio il riquadro dello Store compare tra le app dell'auto.</p></div></div>
   </div></div></section>
 <section id="ch6"><div lang="en"><h2><span class="n">6</span>Backing up the coding with BimmerCode</h2>
   <p>Do this <b>before the flash</b> (setup wizard, step <b>Backup</b>), with the car exactly as it is now, including any retrofits, M graphics or coding changes you made. This backup is the only way to get your coding back after the flash.</p>
@@ -197,7 +197,7 @@
     <div class="step"><div><h4>Check the backup is there</h4><p>In BimmerCode, open the backups of the head unit (from the control unit's menu, usually <b>⋯ → Backups</b> or <b>Restore</b>) and check that a backup with <b>today's date</b> is listed. If you changed the coding before, also make sure the backup you will use reflects the car's <b>current</b> state; BimmerCode can save a new one when you read the module again.</p></div></div>
     <div class="step"><div><h4>Do the same for related modules (recommended)</h4><p>If you have coded other modules, open them once too so BimmerCode keeps their backups. The flash only changes the head unit, but a full set of backups costs nothing.</p></div></div>
     <div class="step"><div><h4>Write down what matters</h4><p>Take screenshots of the head unit's coding options you changed (language, units, video in motion, M graphics, camera options…). They help to check the car after the restore.</p></div></div>
-    <div class="step"><div><h4>Confirm in the app</h4><p>Back in MGU Store Manager, step Backup: tick <b>“I made the full coding backup (HU_MGU and NCD)”</b>.</p></div></div>
+    <div class="step"><div><h4>Confirm in the app</h4><p>Back in DashLoader, step Backup: tick <b>“I made the full coding backup (HU_MGU and NCD)”</b>.</p></div></div>
   </div>
   <div class="note warn"><span class="t">Keep the backup on the phone</span>BimmerCode keeps its backups inside the app on that phone. Until you have restored the coding (chapter 7), <b>don't uninstall BimmerCode, don't reset or change the phone</b>, and use the same phone and the same BimmerCode account for the restore.</div>
   <div class="note tip"><span class="t">With E-Sys instead</span>Read the head unit's coding (HU_MGU) and save the <b>NCD</b> file (<code>CAFD_…_….ncd</code>), then copy it into the app's <span class="path">04_backup</span> folder. Also note the head unit's <b>CAFD ID</b>: the app's pre-flash capture records it for you.</div>
@@ -214,7 +214,7 @@
     <div class="step"><div><h4>Controlla che il backup ci sia</h4><p>In BimmerCode apri i backup dell'unità centrale (dal menu della centralina, di solito <b>⋯ → Backup</b> o <b>Ripristina</b>) e controlla che ci sia un backup con la <b>data di oggi</b>. Se avevi già modificato la codifica, assicurati anche che il backup che userai rispecchi lo stato <b>attuale</b> dell'auto; BimmerCode può salvarne uno nuovo quando rileggi la centralina.</p></div></div>
     <div class="step"><div><h4>Fai lo stesso per le centraline collegate (consigliato)</h4><p>Se hai codificato altre centraline, aprile una volta anche quelle così BimmerCode ne conserva i backup. Il flash cambia solo l'unità centrale, ma un set completo di backup non costa niente.</p></div></div>
     <div class="step"><div><h4>Annota ciò che conta</h4><p>Fai degli screenshot delle opzioni di codifica dell'unità che hai cambiato (lingua, unità di misura, video in movimento, grafiche M, opzioni della telecamera…). Servono a controllare l'auto dopo il ripristino.</p></div></div>
-    <div class="step"><div><h4>Conferma nell'app</h4><p>Torna in MGU Store Manager, passo Backup: spunta <b>“Ho fatto il backup completo della codifica (HU_MGU e NCD).”</b></p></div></div>
+    <div class="step"><div><h4>Conferma nell'app</h4><p>Torna in DashLoader, passo Backup: spunta <b>“Ho fatto il backup completo della codifica (HU_MGU e NCD).”</b></p></div></div>
   </div>
   <div class="note warn"><span class="t">Tieni il backup sul telefono</span>BimmerCode conserva i backup dentro l'app, su quel telefono. Finché non hai ripristinato la codifica (capitolo 7), <b>non disinstallare BimmerCode, non resettare né cambiare telefono</b>, e usa lo stesso telefono e lo stesso account BimmerCode per il ripristino.</div>
   <div class="note tip"><span class="t">Con E-Sys invece</span>Leggi la codifica dell'unità (HU_MGU) e salva il file <b>NCD</b> (<code>CAFD_…_….ncd</code>), poi copialo nella cartella <span class="path">04_backup</span> dell'app. Annota anche il <b>CAFD ID</b> dell'unità: la cattura pre-flash dell'app lo registra per te.</div>
@@ -227,7 +227,7 @@
     <div class="step"><div><h4>Restore the backup made before the flash</h4><p>Choose the backup with the date of the day you prepared the flash and tap <b>Restore</b>. Keep the phone awake and close to the car until BimmerCode reports that the coding has been written. Don't switch the ignition off while it writes.</p></div></div>
     <div class="step"><div><h4>Restart and check</h4><p>Switch the ignition off, lock the car for a minute, then switch it on again (or restart the head unit). Check the screen, language, units, camera, M graphics and the options you noted. Compare with your screenshots.</p></div></div>
     <div class="step"><div><h4>Pair the Digital Key again</h4><p>The flash deleted the BMW Digital Key pairings: add your phone and watch again from the <b>My BMW</b> app (or the car's menu), as for a new key.</p></div></div>
-    <div class="step"><div><h4>Save the coding over SSH</h4><p>In MGU Store Manager, step Restore: tick <b>“I restored the coding and checked the car”</b> and press <b>Save the coding over SSH</b>. From now on the app can back up and restore the coding by itself, without BimmerCode.</p></div></div>
+    <div class="step"><div><h4>Save the coding over SSH</h4><p>In DashLoader, step Restore: tick <b>“I restored the coding and checked the car”</b> and press <b>Save the coding over SSH</b>. From now on the app can back up and restore the coding by itself, without BimmerCode.</p></div></div>
   </div>
   <div class="note warn"><span class="t">If the restore doesn't work</span>If BimmerCode can't restore, or something stays reset, <b>don't flash again</b>: a new flash doesn't help. Recode the head unit with <b>E-Sys</b> from your NCD file. If E-Sys says there is no CAFD (<code>FFFFFFFF</code>), first inject the CAFD (its ID is in the app's pre-flash capture), then write the NCD. On some cars with <b>Bowers &amp; Wilkins / surround</b> audio, the sound needs the audio coding and an ISTA calibration after the flash.</div></div><div lang="it"><h2><span class="n">7</span>Ripristino della codifica con BimmerCode</h2>
   <p>Fallo <b>dopo il flash</b> (procedura guidata, passo <b>Ripristino</b>), prima di installare lo Store.</p>
@@ -237,7 +237,7 @@
     <div class="step"><div><h4>Ripristina il backup fatto prima del flash</h4><p>Scegli il backup con la data del giorno in cui hai preparato il flash e tocca <b>Ripristina</b>. Tieni il telefono acceso e vicino all'auto finché BimmerCode non conferma che la codifica è stata scritta. Non spegnere il quadro mentre scrive.</p></div></div>
     <div class="step"><div><h4>Riavvia e controlla</h4><p>Spegni il quadro, chiudi l'auto per un minuto, poi riaccendi (o riavvia l'unità). Controlla schermo, lingua, unità di misura, telecamera, grafiche M e le opzioni che avevi annotato. Confronta con i tuoi screenshot.</p></div></div>
     <div class="step"><div><h4>Riabbina la Digital Key</h4><p>Il flash ha cancellato gli abbinamenti della BMW Digital Key: aggiungi di nuovo telefono e orologio dall'app <b>My BMW</b> (o dal menu dell'auto), come per una chiave nuova.</p></div></div>
-    <div class="step"><div><h4>Salva la codifica via SSH</h4><p>In MGU Store Manager, passo Ripristino: spunta <b>“Ho ripristinato la codifica e verificato l'auto.”</b> e premi <b>Salva la codifica via SSH</b>. Da qui in poi l'app può fare da sola backup e ripristino della codifica, senza BimmerCode.</p></div></div>
+    <div class="step"><div><h4>Salva la codifica via SSH</h4><p>In DashLoader, passo Ripristino: spunta <b>“Ho ripristinato la codifica e verificato l'auto.”</b> e premi <b>Salva la codifica via SSH</b>. Da qui in poi l'app può fare da sola backup e ripristino della codifica, senza BimmerCode.</p></div></div>
   </div>
   <div class="note warn"><span class="t">Se il ripristino non funziona</span>Se BimmerCode non riesce a ripristinare, o qualcosa resta azzerato, <b>non rifare il flash</b>: un nuovo flash non serve. Ricodifica l'unità con <b>E-Sys</b> dal tuo file NCD. Se E-Sys dice che non c'è il CAFD (<code>FFFFFFFF</code>), prima inietta il CAFD (il suo ID è nella cattura pre-flash dell'app), poi scrivi l'NCD. Su alcune auto con audio <b>Bowers &amp; Wilkins / surround</b>, il suono richiede la codifica audio e una calibrazione con ISTA dopo il flash.</div></div></section>
 <section id="ch8"><div lang="en"><h2><span class="n">8</span>Installing apps on the car</h2>
@@ -335,14 +335,14 @@
   <div class="cols">
     <div>
       <img class="sk" src="assets/img/sick.svg" alt="S!ck.">
-      <p><span lang="en">MGU Store Manager — MGU Store on your BMW, from your Mac.</span><span lang="it">MGU Store Manager — MGU Store sulla tua BMW, dal tuo Mac.</span><br>sicklab.it</p>
+      <p><span lang="en">DashLoader — apps on your BMW, from your Mac.</span><span lang="it">DashLoader — app sulla tua BMW, dal tuo Mac.</span><br>sicklab.it</p>
     </div>
-    <div><h4><span lang="en">Product</span><span lang="it">Prodotto</span></h4><a href="index.html#apps"><span lang="en">Apps you can install</span><span lang="it">App che puoi installare</span></a><a href="index.html#how"><span lang="en">How it works</span><span lang="it">Come funziona</span></a><a href="index.html#drive">Drive (AWD → RWD)</a><a href="index.html#pricing"><span lang="en">Pricing</span><span lang="it">Prezzi</span></a><a href="https://github.com/sicklab-sicklab/sicklab.it/releases/latest/download/MGU-Store-Manager.dmg" rel="noopener"><span lang="en">Download the app</span><span lang="it">Scarica l'app</span></a></div>
+    <div><h4><span lang="en">Product</span><span lang="it">Prodotto</span></h4><a href="index.html#apps"><span lang="en">Apps you can install</span><span lang="it">App che puoi installare</span></a><a href="index.html#how"><span lang="en">How it works</span><span lang="it">Come funziona</span></a><a href="index.html#drive">Drive (AWD → RWD)</a><a href="index.html#pricing"><span lang="en">Pricing</span><span lang="it">Prezzi</span></a><a href="https://github.com/sicklab-sicklab/sicklab.it/releases/latest/download/DashLoader.dmg" rel="noopener"><span lang="en">Download the app</span><span lang="it">Scarica l'app</span></a></div>
     <div><h4><span lang="en">Support</span><span lang="it">Supporto</span></h4><a href="guide.html"><span lang="en">Step-by-step guide</span><span lang="it">Guida passo passo</span></a><a href="help.html"><span lang="en">Troubleshooting</span><span lang="it">Risoluzione problemi</span></a><a href="index.html#faq">FAQ</a><a href="mailto:info@sicklab.it"><span lang="en">Contact</span><span lang="it">Contatti</span></a></div>
     <div><h4><span lang="en">Legal</span><span lang="it">Note legali</span></h4><a href="legal.html#terms"><span lang="en">Terms of sale</span><span lang="it">Condizioni di vendita</span></a><a href="legal.html#privacy">Privacy</a><a href="legal.html#withdrawal"><span lang="en">Right of withdrawal</span><span lang="it">Diritto di recesso</span></a><a href="legal.html#seller"><span lang="en">Seller</span><span lang="it">Venditore</span></a><a href="legal.html#credits"><span lang="en">Credits</span><span lang="it">Crediti</span></a></div>
   </div>
-  <div class="legal"><span lang="en">MGU Store Manager is an unofficial project, not affiliated with, endorsed or sponsored by BMW AG. BMW and iDrive are trademarks of BMW AG, used only to describe compatibility. It changes your car's software: use it at your own risk. MGU Store and the community apps shown are free, open-source projects by their own authors, credited next to each image.</span><span lang="it">MGU Store Manager è un progetto non ufficiale, non affiliato, approvato o sponsorizzato da BMW AG. BMW e iDrive sono marchi di BMW AG, citati solo per indicare la compatibilità. Modifica il software della tua auto: lo usi a tuo rischio. MGU Store e le app della community mostrate sono progetti gratuiti e open source dei loro autori, citati accanto a ogni immagine.</span><br>© 2026 SickLab</div>
+  <div class="legal"><span lang="en">DashLoader is an unofficial project, not affiliated with, endorsed or sponsored by BMW AG. BMW and iDrive are trademarks of BMW AG, used only to describe compatibility. It changes your car's software: use it at your own risk. The open-source Store and the community apps shown are free, open-source projects by their own authors, credited next to each image.</span><span lang="it">DashLoader è un progetto non ufficiale, non affiliato, approvato o sponsorizzato da BMW AG. BMW e iDrive sono marchi di BMW AG, citati solo per indicare la compatibilità. Modifica il software della tua auto: lo usi a tuo rischio. Lo Store open source e le app della community mostrate sono progetti gratuiti e open source dei loro autori, citati accanto a ogni immagine.</span><br>© 2026 SickLab</div>
 </div></footer>
-<script src="assets/site.js?v=1795619213"></script>
+<script src="assets/site.js?v=1795719172"></script>
 </body>
 </html>
